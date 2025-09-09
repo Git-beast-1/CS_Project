@@ -21,7 +21,10 @@ namespace CS_Course_Work
             public string Right_Answer;
             public int Option_Length;
         }
-        Question_Setup Question_Ref= new Question_Setup();
+        Question_Setup Transfer_Q_to_List = new Question_Setup();
+        List<Question_Setup> Complete_Question_setup = new List<Question_Setup>();
+
+        public List<RichTextBox> Current_Options;
 
 
         public F_Question_Template()
@@ -31,42 +34,50 @@ namespace CS_Course_Work
 
         private void F_Question_Template_Load(object sender, EventArgs e)
         {
-            Question_Ref.Options = new List<string> (){T_Op_1.Text,T_Op_2.Text,T_Op_3.Text,T_Op_4.Text,T_Op_5.Text,T_Op_6.Text};
-            Question_Ref.Right_Answer = T_Right_Answer.Text;
-            Question_Ref.Question = T_Question.Text;
+           Current_Options = new List<RichTextBox> (){T_Op_1,T_Op_2,T_Op_3,T_Op_4,T_Op_5,T_Op_6};
         }
 
         private void But_New_Question_Click(object sender, EventArgs e)
         {
-            if (Question_Ref.Options[0] == string.Empty)
+            if (T_Question.Text == string.Empty || T_Right_Answer.Text == string.Empty)
             {
-                MessageBox.Show("ENTER at least one Option in first option slot  !!!");
+                MessageBox.Show("Your Question or Option slot is empty, please fill it ");
             }
-            else if (Question_Ref.Question == string.Empty)
+            else if (Current_Options[0].Text == string.Empty)
             {
-                MessageBox.Show("Enter a Question!!!");
+                MessageBox.Show("Make sure fill in option box, the first option slot should be filled ");
             }
-            else if (Question_Ref.Right_Answer == string.Empty) {
-                MessageBox.Show("Enter a Right Answer!!!");
-            }
-
-
-                for (int i = 0; i < Question_Ref.Options.Count; i++)
+            else
+            {
+                for (int i = 0; i < Current_Options.Count; i++)
                 {
-                    if (Question_Ref.Options[i] == Question_Ref.Right_Answer)
+                    if (Current_Options[i].Text == T_Right_Answer.Text)
                     {
                         I_Is_pair += 1;
                     }
                 }
 
-            if(I_Is_pair > 0)
-            {
-                
+                if (I_Is_pair == 1)
+                {
+                    string Convert_List_to_String;
+
+                    Transfer_Q_to_List.Question = T_Question.Text;
+                    Transfer_Q_to_List.Right_Answer= T_Right_Answer.Text;
+
+                    //Up next Saving Options to Structure
+
+                }
+                else if (I_Is_pair !=  1)
+                {
+                    MessageBox.Show("Some of your Options are thesame  OR dont match the right answer input ");
+                }
+
             }
-            else if(I_Is_pair == 0)
-            {
-                MessageBox.Show("Your Right Answer does not match any of your Options !!!");
-            }
+            I_Is_pair = 0;
+        }
+        public void Outer_the_Way()
+        {
+       
         }
     }
 }
