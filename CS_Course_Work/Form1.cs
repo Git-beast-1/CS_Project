@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE STRING OPTIONS BACK IN THE PAN FUNCTIONS 
+namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY CHANGES TO ANY QUESTION
 {
     public partial class F_Question_Template : Form
     {
@@ -37,7 +37,7 @@ namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE
             Q_index = 0;// the index starts off at zero for the first question and will progressively increase for each questions 
         }
 
-        private void But_New_Question_Click(object sender, EventArgs e)
+        public void But_New_Question_Click(object sender, EventArgs e)
         {
             if (T_Question.Text == string.Empty || T_Right_Answer.Text == string.Empty) // Checkes if the Question Box has been filled  and returns a message if false; 
             {
@@ -49,7 +49,7 @@ namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE
             }
             else
             {
-            for (int i = 0; i < Current_Options.Count; i++)
+                for (int i = 0; i < Current_Options.Count; i++)
                 {
                     if (Current_Options[i].Text == T_Right_Answer.Text)// Compares all the option values in the option box to the right answer input 
                     {
@@ -78,7 +78,8 @@ namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE
                     Compress_to_Line = string.Join(",", List_to_string);
                     Temp_Q_setup.Options = Compress_to_Line;
 
-                   Complete_Question_setup.Add(Temp_Q_setup);
+                    Add_to_Complete_Question(Temp_Q_setup);
+
                     Reset_Question();// resets the Ui values for another question input 
                 }
                 else if (I_Is_pair != 1)// if none of the options are thesame with the right answer or more than one of them are thesame, it returns message and doesn't save the data
@@ -88,10 +89,13 @@ namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE
 
             }
              I_Is_pair = 0;
+            Q_index += 1;
         }
 
-
-
+         void Add_to_Complete_Question(Question_Setup Temp_Data)
+        {
+            Complete_Question_setup.Add(Temp_Data);
+        }
           void Reset_Question()
          {
             // in the reset functions, all the values are set to empty, to completely wipe all their string values 
@@ -106,21 +110,42 @@ namespace CS_Course_Work // NEXT UP, COMPLETE THE PAN INTERFACE AND SEPERATE THE
 
         private void But_Right_Pan_Click(object sender, EventArgs e)
         {
-            List<string> List_to_string = new List<string>();
             Q_index += 1;
-
             T_Question.Text = Complete_Question_setup[Q_index].Question;
             T_Right_Answer.Text = Complete_Question_setup[Q_index].Right_Answer;
-          //  List_to_string = Complete_Question_setup[Q_index].Options.Split();
+            List<string> List_To_String = new List<string>(Complete_Question_setup[Q_index].Options.Split(','));// Separates the String options into an array of strings 
+            for (int i = 0; i < List_To_String.Count; i++) {
+                Current_Options[i].Text = List_To_String[i];
+            }
         }
 
         private void But_Left_Pan_Click(object sender, EventArgs e)
+        { 
+             Q_index -= 1;
+
+            if (Q_index < 0) { 
+                Q_index = 0;
+            }
+
+            T_Question.Text = Complete_Question_setup[Q_index].Question;
+            T_Right_Answer.Text = Complete_Question_setup[Q_index].Right_Answer;
+            List<string> List_To_String = new List<string>(Complete_Question_setup[Q_index].Options.Split(','));
+            for (int i = 0; i < List_To_String.Count; i++)
+            {
+                Current_Options[i].Text = List_To_String[i];
+            }
+
+            }
+
+        private void But_Update_Click(object sender, EventArgs e)
         {
-            List<string> List_to_string = new List<string>();
+            But_New_Question_Click(sender,e);
         }
 
-        private void But_Tester_Click(object sender, EventArgs e)
+        private void But_Tester_Click(object sender, EventArgs e)// a Debugging bottom
         {
+            MessageBox.Show("Q_index: " + Q_index);
+            MessageBox.Show("number of Q_setup :" + Complete_Question_setup.Count);
 
         }
     } 
