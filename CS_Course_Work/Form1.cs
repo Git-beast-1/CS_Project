@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY CHANGES TO ANY QUESTION
+namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having issues with question positions, solve it 
 {
     public partial class F_Question_Template : Form
     {
@@ -34,7 +34,8 @@ namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY 
         private void F_Question_Template_Load(object sender, EventArgs e)
         {
             Current_Options = new List<RichTextBox>() { T_Op_1, T_Op_2, T_Op_3, T_Op_4, T_Op_5, T_Op_6 };// when the form loads, all the option boxes are assigned to "Current_Options"
-            Q_index = 0;// the index starts off at zero for the first question and will progressively increase for each questions 
+            Q_index = -1;// the index starts off at zero for the first question and will progressively increase for each questions 
+            Q_no();
         }
 
         public void But_New_Question_Click(object sender, EventArgs e)
@@ -81,6 +82,7 @@ namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY 
                     Add_to_Complete_Question(Temp_Q_setup);
 
                     Reset_Question();// resets the Ui values for another question input 
+                    Q_no();
                 }
                 else if (I_Is_pair != 1)// if none of the options are thesame with the right answer or more than one of them are thesame, it returns message and doesn't save the data
                 {
@@ -92,15 +94,19 @@ namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY 
             Q_index += 1;
         }
 
+        void Q_no()
+        {
+            T_Question_no.Text = Q_index.ToString();
+        }
          void Add_to_Complete_Question(Question_Setup Temp_Data)
         {
             Complete_Question_setup.Add(Temp_Data);
-        }
+        } // adds the Question, options and answer value to the list of the complete question 
           void Reset_Question()
          {
             // in the reset functions, all the values are set to empty, to completely wipe all their string values 
             T_Question.Text = string.Empty;
-            T_Right_Answer.Text = string.Empty;
+            T_Right_Answer.Text = "Input the correct Answer";
             for(int i = 0;i < Current_Options.Count; i++)
             {
                 Current_Options[i].Text = string.Empty;
@@ -110,23 +116,33 @@ namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY 
 
         private void But_Right_Pan_Click(object sender, EventArgs e)
         {
+            Reset_Question();
             Q_index += 1;
+
+            if(Q_index > Complete_Question_setup.Count-1)
+            {
+                Q_index -=1;
+            }
+
             T_Question.Text = Complete_Question_setup[Q_index].Question;
             T_Right_Answer.Text = Complete_Question_setup[Q_index].Right_Answer;
             List<string> List_To_String = new List<string>(Complete_Question_setup[Q_index].Options.Split(','));// Separates the String options into an array of strings 
             for (int i = 0; i < List_To_String.Count; i++) {
                 Current_Options[i].Text = List_To_String[i];
             }
-        }
+            Q_no();
+        }// pans to the next question 
 
         private void But_Left_Pan_Click(object sender, EventArgs e)
         { 
+            Reset_Question();
              Q_index -= 1;
 
             if (Q_index < 0) { 
                 Q_index = 0;
             }
 
+            
             T_Question.Text = Complete_Question_setup[Q_index].Question;
             T_Right_Answer.Text = Complete_Question_setup[Q_index].Right_Answer;
             List<string> List_To_String = new List<string>(Complete_Question_setup[Q_index].Options.Split(','));
@@ -134,19 +150,21 @@ namespace CS_Course_Work // UP NEXT, SOLVE THE RIGHT PAN ISSUE AND UPDATING ANY 
             {
                 Current_Options[i].Text = List_To_String[i];
             }
-
-            }
+            Q_no() ;
+            }// pans to the precede question
 
         private void But_Update_Click(object sender, EventArgs e)
         {
             But_New_Question_Click(sender,e);
         }
 
-        private void But_Tester_Click(object sender, EventArgs e)// a Debugging bottom
+        private void But_Create_Quiz_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Q_index: " + Q_index);
-            MessageBox.Show("number of Q_setup :" + Complete_Question_setup.Count);
 
+        }
+
+        private void But_Tester_Click(object sender, EventArgs e)// a Debugging button
+        {
         }
     } 
 }
