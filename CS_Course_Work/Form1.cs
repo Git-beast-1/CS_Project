@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having issues with question positions, solve it 
+namespace CS_Course_Work // UP NEXT: When a new Question is created but not saved to the setup and we go left, it thinks we are still in the previous setup, SOLVE IT;
 {
     public partial class F_Question_Template : Form
     {
@@ -35,7 +35,6 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
         {
             Current_Options = new List<RichTextBox>() { T_Op_1, T_Op_2, T_Op_3, T_Op_4, T_Op_5, T_Op_6 };// when the form loads, all the option boxes are assigned to "Current_Options"
             Q_index = -1;// the index starts off at zero for the first question and will progressively increase for each questions 
-            Q_no();
         }
 
         public void But_New_Question_Click(object sender, EventArgs e)
@@ -81,8 +80,8 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
 
                     Add_to_Complete_Question(Temp_Q_setup);
 
-                    Reset_Question();// resets the Ui values for another question input 
-                    Q_no();
+                    Reset_Question();// resets the Ui values for another question input
+                    Q_index += 1;
                 }
                 else if (I_Is_pair != 1)// if none of the options are thesame with the right answer or more than one of them are thesame, it returns message and doesn't save the data
                 {
@@ -91,12 +90,7 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
 
             }
              I_Is_pair = 0;
-            Q_index += 1;
-        }
-
-        void Q_no()
-        {
-            T_Question_no.Text = Q_index.ToString();
+          
         }
          void Add_to_Complete_Question(Question_Setup Temp_Data)
         {
@@ -130,7 +124,6 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
             for (int i = 0; i < List_To_String.Count; i++) {
                 Current_Options[i].Text = List_To_String[i];
             }
-            Q_no();
         }// pans to the next question 
 
         private void But_Left_Pan_Click(object sender, EventArgs e)
@@ -150,7 +143,6 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
             {
                 Current_Options[i].Text = List_To_String[i];
             }
-            Q_no() ;
             }// pans to the precede question
 
         private void But_Update_Click(object sender, EventArgs e)
@@ -165,6 +157,7 @@ namespace CS_Course_Work // UP NEXT:QUestion is looping on itself and having iss
 
         private void But_Tester_Click(object sender, EventArgs e)// a Debugging button
         {
+            MessageBox.Show("Q_index : " + Q_index);
         }
     } 
 }
