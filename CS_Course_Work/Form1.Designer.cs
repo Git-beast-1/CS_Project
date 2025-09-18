@@ -43,13 +43,13 @@
             this.T_Timer = new System.Windows.Forms.RichTextBox();
             this.But_Tester = new System.Windows.Forms.Button();
             this.But_Update = new System.Windows.Forms.Button();
-            this.T_Question_no = new System.Windows.Forms.RichTextBox();
+            this.T_Display_number = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // T_Question
             // 
             this.T_Question.Location = new System.Drawing.Point(54, 46);
-            this.T_Question.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Question.Margin = new System.Windows.Forms.Padding(2);
             this.T_Question.Name = "T_Question";
             this.T_Question.Size = new System.Drawing.Size(355, 206);
             this.T_Question.TabIndex = 0;
@@ -58,7 +58,7 @@
             // T_Op_1
             // 
             this.T_Op_1.Location = new System.Drawing.Point(54, 277);
-            this.T_Op_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_1.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_1.Name = "T_Op_1";
             this.T_Op_1.Size = new System.Drawing.Size(217, 59);
             this.T_Op_1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // T_Op_2
             // 
             this.T_Op_2.Location = new System.Drawing.Point(339, 277);
-            this.T_Op_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_2.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_2.Name = "T_Op_2";
             this.T_Op_2.Size = new System.Drawing.Size(217, 59);
             this.T_Op_2.TabIndex = 2;
@@ -76,7 +76,7 @@
             // T_Op_3
             // 
             this.T_Op_3.Location = new System.Drawing.Point(613, 277);
-            this.T_Op_3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_3.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_3.Name = "T_Op_3";
             this.T_Op_3.Size = new System.Drawing.Size(217, 59);
             this.T_Op_3.TabIndex = 3;
@@ -85,7 +85,7 @@
             // T_Op_4
             // 
             this.T_Op_4.Location = new System.Drawing.Point(54, 372);
-            this.T_Op_4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_4.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_4.Name = "T_Op_4";
             this.T_Op_4.Size = new System.Drawing.Size(217, 59);
             this.T_Op_4.TabIndex = 4;
@@ -94,7 +94,7 @@
             // T_Op_5
             // 
             this.T_Op_5.Location = new System.Drawing.Point(339, 372);
-            this.T_Op_5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_5.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_5.Name = "T_Op_5";
             this.T_Op_5.Size = new System.Drawing.Size(217, 59);
             this.T_Op_5.TabIndex = 5;
@@ -103,7 +103,7 @@
             // T_Op_6
             // 
             this.T_Op_6.Location = new System.Drawing.Point(613, 367);
-            this.T_Op_6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Op_6.Margin = new System.Windows.Forms.Padding(2);
             this.T_Op_6.Name = "T_Op_6";
             this.T_Op_6.Size = new System.Drawing.Size(217, 59);
             this.T_Op_6.TabIndex = 6;
@@ -112,7 +112,7 @@
             // But_Create_Quiz
             // 
             this.But_Create_Quiz.Location = new System.Drawing.Point(453, 46);
-            this.But_Create_Quiz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_Create_Quiz.Margin = new System.Windows.Forms.Padding(2);
             this.But_Create_Quiz.Name = "But_Create_Quiz";
             this.But_Create_Quiz.Size = new System.Drawing.Size(118, 58);
             this.But_Create_Quiz.TabIndex = 10;
@@ -123,7 +123,7 @@
             // But_New_Question
             // 
             this.But_New_Question.Location = new System.Drawing.Point(599, 46);
-            this.But_New_Question.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_New_Question.Margin = new System.Windows.Forms.Padding(2);
             this.But_New_Question.Name = "But_New_Question";
             this.But_New_Question.Size = new System.Drawing.Size(118, 58);
             this.But_New_Question.TabIndex = 11;
@@ -134,7 +134,7 @@
             // T_Right_Answer
             // 
             this.T_Right_Answer.Location = new System.Drawing.Point(339, 465);
-            this.T_Right_Answer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Right_Answer.Margin = new System.Windows.Forms.Padding(2);
             this.T_Right_Answer.Name = "T_Right_Answer";
             this.T_Right_Answer.Size = new System.Drawing.Size(217, 48);
             this.T_Right_Answer.TabIndex = 12;
@@ -143,7 +143,7 @@
             // But_Left_Pan
             // 
             this.But_Left_Pan.Location = new System.Drawing.Point(8, 224);
-            this.But_Left_Pan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_Left_Pan.Margin = new System.Windows.Forms.Padding(2);
             this.But_Left_Pan.Name = "But_Left_Pan";
             this.But_Left_Pan.Size = new System.Drawing.Size(42, 68);
             this.But_Left_Pan.TabIndex = 13;
@@ -154,7 +154,7 @@
             // But_Right_Pan
             // 
             this.But_Right_Pan.Location = new System.Drawing.Point(837, 224);
-            this.But_Right_Pan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_Right_Pan.Margin = new System.Windows.Forms.Padding(2);
             this.But_Right_Pan.Name = "But_Right_Pan";
             this.But_Right_Pan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.But_Right_Pan.Size = new System.Drawing.Size(42, 68);
@@ -166,7 +166,7 @@
             // T_Timer
             // 
             this.T_Timer.Location = new System.Drawing.Point(453, 122);
-            this.T_Timer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Timer.Margin = new System.Windows.Forms.Padding(2);
             this.T_Timer.Name = "T_Timer";
             this.T_Timer.Size = new System.Drawing.Size(119, 59);
             this.T_Timer.TabIndex = 15;
@@ -175,7 +175,7 @@
             // But_Tester
             // 
             this.But_Tester.Location = new System.Drawing.Point(625, 455);
-            this.But_Tester.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_Tester.Margin = new System.Windows.Forms.Padding(2);
             this.But_Tester.Name = "But_Tester";
             this.But_Tester.Size = new System.Drawing.Size(118, 58);
             this.But_Tester.TabIndex = 16;
@@ -186,7 +186,7 @@
             // But_Update
             // 
             this.But_Update.Location = new System.Drawing.Point(599, 122);
-            this.But_Update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.But_Update.Margin = new System.Windows.Forms.Padding(2);
             this.But_Update.Name = "But_Update";
             this.But_Update.Size = new System.Drawing.Size(118, 58);
             this.But_Update.TabIndex = 17;
@@ -194,21 +194,21 @@
             this.But_Update.UseVisualStyleBackColor = true;
             this.But_Update.Click += new System.EventHandler(this.But_Update_Click);
             // 
-            // T_Question_no
+            // T_Display_number
             // 
-            this.T_Question_no.Location = new System.Drawing.Point(762, 46);
-            this.T_Question_no.Margin = new System.Windows.Forms.Padding(2);
-            this.T_Question_no.Name = "T_Question_no";
-            this.T_Question_no.Size = new System.Drawing.Size(90, 29);
-            this.T_Question_no.TabIndex = 18;
-            this.T_Question_no.Text = "";
+            this.T_Display_number.Location = new System.Drawing.Point(762, 46);
+            this.T_Display_number.Margin = new System.Windows.Forms.Padding(2);
+            this.T_Display_number.Name = "T_Display_number";
+            this.T_Display_number.Size = new System.Drawing.Size(90, 29);
+            this.T_Display_number.TabIndex = 18;
+            this.T_Display_number.Text = "";
             // 
             // F_Question_Template
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 586);
-            this.Controls.Add(this.T_Question_no);
+            this.Controls.Add(this.T_Display_number);
             this.Controls.Add(this.But_Update);
             this.Controls.Add(this.But_Tester);
             this.Controls.Add(this.T_Timer);
@@ -224,7 +224,7 @@
             this.Controls.Add(this.T_Op_2);
             this.Controls.Add(this.T_Op_1);
             this.Controls.Add(this.T_Question);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F_Question_Template";
             this.Text = "Question Template";
             this.Load += new System.EventHandler(this.F_Question_Template_Load);
@@ -249,7 +249,7 @@
         private System.Windows.Forms.RichTextBox T_Timer;
         private System.Windows.Forms.Button But_Tester;
         private System.Windows.Forms.Button But_Update;
-        private System.Windows.Forms.RichTextBox T_Question_no;
+        private System.Windows.Forms.RichTextBox T_Display_number;
     }
 }
 
