@@ -40,7 +40,6 @@
             this.T_Right_Answer = new System.Windows.Forms.RichTextBox();
             this.But_Left_Pan = new System.Windows.Forms.Button();
             this.But_Right_Pan = new System.Windows.Forms.Button();
-            this.T_Timer = new System.Windows.Forms.RichTextBox();
             this.But_Tester = new System.Windows.Forms.Button();
             this.But_Update = new System.Windows.Forms.Button();
             this.T_Display_number = new System.Windows.Forms.RichTextBox();
@@ -111,14 +110,13 @@
             // 
             // But_Create_Quiz
             // 
-            this.But_Create_Quiz.Location = new System.Drawing.Point(453, 46);
+            this.But_Create_Quiz.Location = new System.Drawing.Point(477, 46);
             this.But_Create_Quiz.Margin = new System.Windows.Forms.Padding(2);
             this.But_Create_Quiz.Name = "But_Create_Quiz";
             this.But_Create_Quiz.Size = new System.Drawing.Size(118, 58);
             this.But_Create_Quiz.TabIndex = 10;
             this.But_Create_Quiz.Text = "Create Quiz";
             this.But_Create_Quiz.UseVisualStyleBackColor = true;
-            this.But_Create_Quiz.Click += new System.EventHandler(this.But_Create_Quiz_Click);
             // 
             // But_New_Question
             // 
@@ -163,15 +161,6 @@
             this.But_Right_Pan.UseVisualStyleBackColor = true;
             this.But_Right_Pan.Click += new System.EventHandler(this.But_Right_Pan_Click);
             // 
-            // T_Timer
-            // 
-            this.T_Timer.Location = new System.Drawing.Point(453, 122);
-            this.T_Timer.Margin = new System.Windows.Forms.Padding(2);
-            this.T_Timer.Name = "T_Timer";
-            this.T_Timer.Size = new System.Drawing.Size(119, 59);
-            this.T_Timer.TabIndex = 15;
-            this.T_Timer.Text = "Enter Time in seconds";
-            // 
             // But_Tester
             // 
             this.But_Tester.Location = new System.Drawing.Point(625, 455);
@@ -185,7 +174,7 @@
             // 
             // But_Update
             // 
-            this.But_Update.Location = new System.Drawing.Point(599, 122);
+            this.But_Update.Location = new System.Drawing.Point(536, 108);
             this.But_Update.Margin = new System.Windows.Forms.Padding(2);
             this.But_Update.Name = "But_Update";
             this.But_Update.Size = new System.Drawing.Size(118, 58);
@@ -211,7 +200,6 @@
             this.Controls.Add(this.T_Display_number);
             this.Controls.Add(this.But_Update);
             this.Controls.Add(this.But_Tester);
-            this.Controls.Add(this.T_Timer);
             this.Controls.Add(this.But_Right_Pan);
             this.Controls.Add(this.But_Left_Pan);
             this.Controls.Add(this.T_Right_Answer);
@@ -246,7 +234,6 @@
         private System.Windows.Forms.RichTextBox T_Right_Answer;
         private System.Windows.Forms.Button But_Left_Pan;
         private System.Windows.Forms.Button But_Right_Pan;
-        private System.Windows.Forms.RichTextBox T_Timer;
         private System.Windows.Forms.Button But_Tester;
         private System.Windows.Forms.Button But_Update;
         private System.Windows.Forms.RichTextBox T_Display_number;
