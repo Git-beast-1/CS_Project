@@ -9,9 +9,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
-namespace CS_Course_Work // BUGS: if a user goes back to the preceeding question and clicks "New Question", there is 2 duplicates of that question, So check if a question setup already exists 
+namespace CS_Course_Work // BUGS : if a user goes back to the preceeding question and clicks "New Question", there is 2 duplicates of that question, So check if a question setup already exists 
 {                         // if a user clicks a new question and the new question isnt added to the list of question_setup, when you left pan, it assumes it one the current registered question and hence goes 2 question back
     public partial class F_Question_Template : Form
     {
@@ -25,7 +24,7 @@ namespace CS_Course_Work // BUGS: if a user goes back to the preceeding question
             public string Options;
             public string Right_Answer;
         }
-        List<Question_Setup> Complete_Question_setup = new List<Question_Setup>();// holds a list of question of type "Question_Setup"
+        public List<Question_Setup> Complete_Question_setup = new List<Question_Setup>();// holds a list of question of type "Question_Setup"
         public List<RichTextBox> Current_Options;// responsible for the current options in the interface 
 
         bool Is_Update_Click; // returns true if the update button is selected 
@@ -42,10 +41,14 @@ namespace CS_Course_Work // BUGS: if a user goes back to the preceeding question
             Q_index = -1;// the index starts off at zero for the first question and will progressively increase for each questions 
             Display_no();
             Is_Update_Click = false;
+            But_Right_Pan.Enabled = false;
+            But_Left_Pan.Enabled = false;
         }
 
         public void But_New_Question_Click(object sender, EventArgs e)
         {
+            But_Left_Pan.Enabled=true;
+            But_Right_Pan.Enabled = true;
             if (T_Question.Text == string.Empty || T_Right_Answer.Text == string.Empty) // Checkes if the Question Box has been filled  and returns a message if false; 
             {
                 MessageBox.Show("Your Question,Right Answer slot  or Option slot is empty, please fill it,MAKE SURE SPACE ISN'T INCLUDED AT THE END OF YOUR OPTION INPUT ","ERROR !!");
@@ -196,6 +199,12 @@ namespace CS_Course_Work // BUGS: if a user goes back to the preceeding question
             
             }// pans to the precede question
 
+        private void But_Create_Quiz_Click(object sender, EventArgs e)
+        {
+            F_Quiz_Info Quiz_Info = new F_Quiz_Info();
+            Quiz_Info.Show();
+        }
+
         private void But_Update_Click(object sender, EventArgs e)
         {
             Is_Update_Click = true;
@@ -205,7 +214,8 @@ namespace CS_Course_Work // BUGS: if a user goes back to the preceeding question
 
         private void But_Tester_Click(object sender, EventArgs e)// a Debugging button
         {
-             MessageBox.Show("Q_index : " + Q_index + "Display_index" + Display_index );
+
+            MessageBox.Show(Complete_Question_setup.Count.ToString());
         }
     } 
 }

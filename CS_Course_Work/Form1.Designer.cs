@@ -117,6 +117,7 @@
             this.But_Create_Quiz.TabIndex = 10;
             this.But_Create_Quiz.Text = "Create Quiz";
             this.But_Create_Quiz.UseVisualStyleBackColor = true;
+            this.But_Create_Quiz.Click += new System.EventHandler(this.But_Create_Quiz_Click);
             // 
             // But_New_Question
             // 

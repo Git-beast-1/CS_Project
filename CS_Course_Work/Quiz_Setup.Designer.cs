@@ -1,6 +1,6 @@
 ﻿namespace CS_Course_Work
 {
-    partial class Quiz_Setup
+    partial class F_Quiz_Info
     {
         /// <summary>
         /// Required designer variable.
@@ -46,6 +46,11 @@
             this.Combo_Student_Accounts = new System.Windows.Forms.ComboBox();
             this.T_Version_Number = new System.Windows.Forms.RichTextBox();
             this.L_Version_Number = new System.Windows.Forms.Label();
+            this.But_Add_Student_Account = new System.Windows.Forms.Button();
+            this.But_Add_Links = new System.Windows.Forms.Button();
+            this.But_Bug_Tester = new System.Windows.Forms.Button();
+            this.But_Remove_Student_Account = new System.Windows.Forms.Button();
+            this.But_Remove_Links = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // T_Quiz_Name
@@ -170,6 +175,7 @@
             // 
             // T_Timer_Seconds
             // 
+            this.T_Timer_Seconds.Enabled = false;
             this.T_Timer_Seconds.Location = new System.Drawing.Point(133, 218);
             this.T_Timer_Seconds.Name = "T_Timer_Seconds";
             this.T_Timer_Seconds.Size = new System.Drawing.Size(140, 16);
@@ -185,6 +191,7 @@
             this.But_Create_Quiz.TabIndex = 15;
             this.But_Create_Quiz.Text = "Create Quiz";
             this.But_Create_Quiz.UseVisualStyleBackColor = true;
+            this.But_Create_Quiz.Click += new System.EventHandler(this.But_Create_Quiz_Click_1);
             // 
             // Combo_Student_Accounts
             // 
@@ -196,6 +203,7 @@
             // 
             // T_Version_Number
             // 
+            this.T_Version_Number.Enabled = false;
             this.T_Version_Number.Location = new System.Drawing.Point(133, 20);
             this.T_Version_Number.Name = "T_Version_Number";
             this.T_Version_Number.Size = new System.Drawing.Size(140, 16);
@@ -212,11 +220,67 @@
             this.L_Version_Number.TabIndex = 18;
             this.L_Version_Number.Text = "Version Number";
             // 
-            // Quiz_Setup
+            // But_Add_Student_Account
+            // 
+            this.But_Add_Student_Account.Location = new System.Drawing.Point(414, 64);
+            this.But_Add_Student_Account.Name = "But_Add_Student_Account";
+            this.But_Add_Student_Account.Size = new System.Drawing.Size(27, 23);
+            this.But_Add_Student_Account.TabIndex = 19;
+            this.But_Add_Student_Account.Text = "A";
+            this.But_Add_Student_Account.UseVisualStyleBackColor = true;
+            this.But_Add_Student_Account.Click += new System.EventHandler(this.But_Add_Student_Account_Click);
+            // 
+            // But_Add_Links
+            // 
+            this.But_Add_Links.Location = new System.Drawing.Point(414, 112);
+            this.But_Add_Links.Name = "But_Add_Links";
+            this.But_Add_Links.Size = new System.Drawing.Size(27, 23);
+            this.But_Add_Links.TabIndex = 20;
+            this.But_Add_Links.Text = "A";
+            this.But_Add_Links.UseVisualStyleBackColor = true;
+            this.But_Add_Links.Click += new System.EventHandler(this.But_Add_Links_Click);
+            // 
+            // But_Bug_Tester
+            // 
+            this.But_Bug_Tester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.But_Bug_Tester.Location = new System.Drawing.Point(313, 218);
+            this.But_Bug_Tester.Name = "But_Bug_Tester";
+            this.But_Bug_Tester.Size = new System.Drawing.Size(119, 34);
+            this.But_Bug_Tester.TabIndex = 21;
+            this.But_Bug_Tester.Text = "Bug Tester";
+            this.But_Bug_Tester.UseVisualStyleBackColor = true;
+            this.But_Bug_Tester.Click += new System.EventHandler(this.But_Bug_Tester_Click);
+            // 
+            // But_Remove_Student_Account
+            // 
+            this.But_Remove_Student_Account.Location = new System.Drawing.Point(447, 64);
+            this.But_Remove_Student_Account.Name = "But_Remove_Student_Account";
+            this.But_Remove_Student_Account.Size = new System.Drawing.Size(27, 23);
+            this.But_Remove_Student_Account.TabIndex = 22;
+            this.But_Remove_Student_Account.Text = "R";
+            this.But_Remove_Student_Account.UseVisualStyleBackColor = true;
+            this.But_Remove_Student_Account.Click += new System.EventHandler(this.But_Remove_Student_Account_Click);
+            // 
+            // But_Remove_Links
+            // 
+            this.But_Remove_Links.Location = new System.Drawing.Point(447, 112);
+            this.But_Remove_Links.Name = "But_Remove_Links";
+            this.But_Remove_Links.Size = new System.Drawing.Size(27, 23);
+            this.But_Remove_Links.TabIndex = 23;
+            this.But_Remove_Links.Text = "R";
+            this.But_Remove_Links.UseVisualStyleBackColor = true;
+            this.But_Remove_Links.Click += new System.EventHandler(this.But_Remove_Links_Click);
+            // 
+            // F_Quiz_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 316);
+            this.ClientSize = new System.Drawing.Size(476, 316);
+            this.Controls.Add(this.But_Remove_Links);
+            this.Controls.Add(this.But_Remove_Student_Account);
+            this.Controls.Add(this.But_Bug_Tester);
+            this.Controls.Add(this.But_Add_Links);
+            this.Controls.Add(this.But_Add_Student_Account);
             this.Controls.Add(this.L_Version_Number);
             this.Controls.Add(this.T_Version_Number);
             this.Controls.Add(this.Combo_Student_Accounts);
@@ -235,7 +299,7 @@
             this.Controls.Add(this.L_Student_Account);
             this.Controls.Add(this.L_Quiz_Name);
             this.Controls.Add(this.T_Quiz_Name);
-            this.Name = "Quiz_Setup";
+            this.Name = "F_Quiz_Info";
             this.Text = "Quiz_Info";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,5 +326,10 @@
         private System.Windows.Forms.ComboBox Combo_Student_Accounts;
         private System.Windows.Forms.RichTextBox T_Version_Number;
         private System.Windows.Forms.Label L_Version_Number;
+        private System.Windows.Forms.Button But_Add_Student_Account;
+        private System.Windows.Forms.Button But_Add_Links;
+        private System.Windows.Forms.Button But_Bug_Tester;
+        private System.Windows.Forms.Button But_Remove_Student_Account;
+        private System.Windows.Forms.Button But_Remove_Links;
     }
 }
