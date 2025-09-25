@@ -11,8 +11,9 @@ using System.IO;
 namespace CS_Course_Work
 {
     public partial class F_Quiz_Info : Form //NEXT UP: Check date,Time, Storage Time and account formats, Make Retry and Timer enable and disable,Read and Write to a File
-    {                                        //BUG: Complete_Question_Setup isnt being read from its original script 
-        public F_Question_Template All_Question_Data = new F_Question_Template();
+    {                                      
+
+        public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
         public class Q_Information 
         {
            public   int Version_no;
@@ -54,12 +55,12 @@ namespace CS_Course_Work
         }
         private void But_Bug_Tester_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(All_Question_Data.Complete_Question_setup.Count.ToString());
-          //  MessageBox.Show(All_Question_Data.Complete_Question_setup[0].ToString());
-            //for(int i = 0; 1 < All_Question_Data.Complete_Question_setup.Count; i++)
-            //{
-              //  MessageBox.Show("Question: " + All_Question_Data.Complete_Question_setup[i].Question + "Options: " + All_Question_Data.Complete_Question_setup[i].Options + "Right Answer" + All_Question_Data.Complete_Question_setup[i].Right_Answer);
-            //}
+            for(int i = 0; i < All_Questions.Count; i++)
+            {
+                MessageBox.Show("Question: " + All_Questions[i].Question);
+                MessageBox.Show("Options: " + All_Questions[i].Options);
+                MessageBox.Show("Right Answer: " +All_Questions[i].Right_Answer);
+            }
         }
 
         private void But_Add_Student_Account_Click(object sender, EventArgs e)

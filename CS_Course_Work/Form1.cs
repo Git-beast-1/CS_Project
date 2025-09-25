@@ -203,6 +203,11 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
         {
             F_Quiz_Info Quiz_Info = new F_Quiz_Info();
             Quiz_Info.Show();
+
+            for(int i = 0;i < Complete_Question_setup.Count; i++)
+            {
+                Quiz_Info.All_Questions.Add(Complete_Question_setup [i]);   
+            }
         }
 
         private void But_Update_Click(object sender, EventArgs e)
