@@ -27,6 +27,7 @@ namespace CS_Course_Work
            public string Time;
         }
         public Q_Information Q_Info= new Q_Information();
+        public string File_name;
         public F_Quiz_Info()
         {
             InitializeComponent();
@@ -34,10 +35,7 @@ namespace CS_Course_Work
 
         private void But_Create_Quiz_Click_1(object sender, EventArgs e)
         {
-            if(T_Quiz_Name.Text == string.Empty || T_Due_Date.Text == string.Empty || T_Storage_Time.Text == string.Empty)
-            {
-                MessageBox.Show("Please fill the Quiz Name, Due_Date and Storage time slot !!!", "MISSING VALUES");
-            }
+            Write_To_Database();
         }
 
 
@@ -47,20 +45,30 @@ namespace CS_Course_Work
 
         }
         public void Write_To_Database() {
-            if (File.Exists(T_Quiz_Name.Text))
-            {
+            File_name = T_Quiz_Name.Text + ".txt";
 
+            if (File.Exists(File_name))
+            {
+                MessageBox.Show("File already exists!!");
             }
-            
+            else if (!File.Exists(File_name)) { 
+                File.Create(File_name).Close();
+
+                using (StreamWriter Write_to_File = new StreamWriter(File_name)) {
+                    for (int i = 0; i < All_Questions.Count; i++) { 
+                        Write_to_File.WriteLine(All_Questions[i].Question);
+                        Write_to_File.WriteLine(All_Questions[i].Options);
+                        Write_to_File.WriteLine(All_Questions[i].Right_Answer);
+                    }
+                }
+
+                MessageBox.Show(File_name + " has been created !!!");
+            }
         }
         private void But_Bug_Tester_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < All_Questions.Count; i++)
-            {
-                MessageBox.Show("Question: " + All_Questions[i].Question);
-                MessageBox.Show("Options: " + All_Questions[i].Options);
-                MessageBox.Show("Right Answer: " +All_Questions[i].Right_Answer);
-            }
+
+            MessageBox.Show("File name : " + File_name);
         }
 
         private void But_Add_Student_Account_Click(object sender, EventArgs e)
