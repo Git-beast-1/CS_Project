@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 namespace CS_Course_Work
 {
-    public partial class F_Quiz_Info : Form //NEXT UP: Check date,Time, Storage Time and account formats, Make Retry and Timer enable and disable,Read and Write to a File
+    public partial class F_Quiz_Info : Form //NEXT UP: write quiz and quiz info to central database, and send the quiz name and quiz info name to student account combo box
     {                                      
 
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
@@ -45,6 +45,8 @@ namespace CS_Course_Work
 
         }
         public void Write_To_Database() {
+
+            
             File_name = T_Quiz_Name.Text + ".txt";
 
             if (File.Exists(File_name))
@@ -61,9 +63,17 @@ namespace CS_Course_Work
                         Write_to_File.WriteLine(All_Questions[i].Right_Answer);
                     }
                 }
-
                 MessageBox.Show(File_name + " has been created !!!");
+
+                Q_Info.Version_no = 1;
+
+
             }
+        }
+
+        public void Send_Quiz_Data_To_Student_Database()
+        {
+
         }
         private void But_Bug_Tester_Click(object sender, EventArgs e)
         {
