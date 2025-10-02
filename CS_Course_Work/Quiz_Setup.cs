@@ -13,8 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace CS_Course_Work
 {
-    public partial class F_Quiz_Info : Form //NEXT UP: write quiz and quiz info to central database, and send the quiz name and quiz info name to student account combo box
-    {                                      
+    public partial class F_Quiz_Info : Form //NEXT UP:read from data base after quiz has been created to reload from teachers homepage. 
+          // Dont forget to include teachers email authenication account in the quiz "Central Quiz" before storing the quiz
+    {                                      // For Database: make sure Newtonsoft is version 13.03, the path as .json at the end,
 
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
         public class Q_Information 
@@ -39,6 +40,7 @@ namespace CS_Course_Work
         private void But_Create_Quiz_Click_1(object sender, EventArgs e)
         {
             Write_To_Database();
+
         }
 
 
@@ -49,15 +51,15 @@ namespace CS_Course_Work
         }
         public void Write_To_Database()
         {
-            string Database_URL = "https://console.firebase.google.com/project/teacher-student-database/database/teacher-student-database-default-rtdb/data/~2F";
-            string Location = "Teacher/Quiz";
-            string URL = Database_URL.TrimEnd('/') + "/" + Location + ".json";
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "Central_Quiz/"+T_Quiz_Name.Text+".json"; 
 
-            string Data_As_Json=JsonConvert.SerializeObject("This is testing 1-2-3");
+            string Link = Database_URL + Location;
+            string Data_As_Json=JsonConvert.SerializeObject(All_Questions);
             var Json_Wrapped= new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
 
             var Sender_client = new HttpClient();
-            var To_Database = Sender_client.PutAsync(URL, Json_Wrapped).Result;
+            var To_Database = Sender_client.PutAsync(Link, Json_Wrapped).Result;
 
             if (To_Database.IsSuccessStatusCode)
             {
@@ -102,6 +104,11 @@ namespace CS_Course_Work
         {
             Combo_Links.Items.Remove(Combo_Links.Text);
             Combo_Links.Text = string.Empty;
+        }
+
+        private void Combo_Student_Accounts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,5 +16,10 @@ namespace CS_Course_Work
         {
             InitializeComponent();
         }
+
+        private void Quizzes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

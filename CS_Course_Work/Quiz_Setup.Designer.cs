@@ -200,6 +200,7 @@
             this.Combo_Student_Accounts.Name = "Combo_Student_Accounts";
             this.Combo_Student_Accounts.Size = new System.Drawing.Size(275, 21);
             this.Combo_Student_Accounts.TabIndex = 16;
+            this.Combo_Student_Accounts.SelectedIndexChanged += new System.EventHandler(this.Combo_Student_Accounts_SelectedIndexChanged);
             // 
             // T_Version_Number
             // 
