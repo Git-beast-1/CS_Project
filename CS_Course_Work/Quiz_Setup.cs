@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 namespace CS_Course_Work
 {
     public partial class F_Quiz_Info : Form //NEXT UP: write quiz and quiz info to central database, and send the quiz name and quiz info name to student account combo box
@@ -44,30 +47,26 @@ namespace CS_Course_Work
         {
 
         }
-        public void Write_To_Database() {
+        public void Write_To_Database()
+        {
+            string Database_URL = "https://console.firebase.google.com/project/teacher-student-database/database/teacher-student-database-default-rtdb/data/~2F";
+            string Location = "Teacher/Quiz";
+            string URL = Database_URL.TrimEnd('/') + "/" + Location + ".json";
 
-            
-            File_name = T_Quiz_Name.Text + ".txt";
+            string Data_As_Json=JsonConvert.SerializeObject("This is testing 1-2-3");
+            var Json_Wrapped= new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
 
-            if (File.Exists(File_name))
+            var Sender_client = new HttpClient();
+            var To_Database = Sender_client.PutAsync(URL, Json_Wrapped).Result;
+
+            if (To_Database.IsSuccessStatusCode)
             {
-                MessageBox.Show("File already exists!!");
+                MessageBox.Show("Write was successful!!");
             }
-            else if (!File.Exists(File_name)) { 
-                File.Create(File_name).Close();
-
-                using (StreamWriter Write_to_File = new StreamWriter(File_name)) {
-                    for (int i = 0; i < All_Questions.Count; i++) { 
-                        Write_to_File.WriteLine(All_Questions[i].Question);
-                        Write_to_File.WriteLine(All_Questions[i].Options);
-                        Write_to_File.WriteLine(All_Questions[i].Right_Answer);
-                    }
-                }
-                MessageBox.Show(File_name + " has been created !!!");
-
-                Q_Info.Version_no = 1;
-
-
+            else
+            {
+                string errorDetails = To_Database.Content.ReadAsStringAsync().Result;
+                MessageBox.Show(errorDetails);
             }
         }
 
