@@ -10,11 +10,81 @@ using System.Windows.Forms;
 
 namespace CS_Course_Work
 {
-    public partial class Log_In : Form
+    public partial class F_Log_In : Form
     {
-        public Log_In()
+
+        public F_Log_In()
         {
             InitializeComponent();
+        }
+
+        private void But_Sign_Up_Click(object sender, EventArgs e)
+        {
+            F_Sign_up sign_Up = new F_Sign_up();
+            sign_Up.Show();
+        }
+
+        private void But_Log_IN_Click(object sender, EventArgs e)
+        {
+            string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";// to access firebase
+            string URl_for_Account_Log_IN = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + API_Key;
+
+            var Log_IN_Data = new
+            {
+                email = T_Log_In_Email.Text,
+                password = T_Log_In_Password.Text,
+                returnSecureToken = true
+            };
+
+
+            string Convert_To_Json = Newtonsoft.Json.JsonConvert.SerializeObject(Log_IN_Data);
+            var Organise_Json = new System.Net.Http.StringContent(Convert_To_Json, Encoding.UTF8, "application/json");
+            var HTTP_Client = new System.Net.Http.HttpClient();// a payload to send json data for account creation
+            var Data_Response = HTTP_Client.PostAsync(URl_for_Account_Log_IN, Organise_Json).Result;// creates the actual account
+            string Response_As_String = Data_Response.Content.ReadAsStringAsync().Result;
+            if (Data_Response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Account successfully Logged In");
+            }
+            else
+            {
+                MessageBox.Show("Error:" + Response_As_String);
+            }
+        }
+
+        private void T_Reset_Password_Click(object sender, EventArgs e)
+        {
+            if(T_Log_In_Email.Text == string.Empty)
+            {
+                MessageBox.Show("Enter your email");
+            }
+            
+            else {
+            string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";
+            string URL_for_Reset = "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=" + API_Key;
+
+            var Reset_Data = new
+            {
+                requestType = "PASSWORD_RESET",
+                email = T_Log_In_Email.Text // Your textbox for email input
+            };
+
+                string Convert_To_Json = Newtonsoft.Json.JsonConvert.SerializeObject(Reset_Data);
+            var Organise_Json = new System.Net.Http.StringContent(Convert_To_Json, Encoding.UTF8, "application/json");
+            var HTTP_Client = new System.Net.Http.HttpClient();
+            var Data_Response = HTTP_Client.PostAsync(URL_for_Reset, Organise_Json).Result;
+            string Response_As_String = Data_Response.Content.ReadAsStringAsync().Result;
+
+            if (Data_Response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Password reset email sent successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Error:\n" + Response_As_String);
+            }
+            }
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CS_Course_Work
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_Question_Template());
+            Application.Run(new F_Log_In());
         }
     }
 }
