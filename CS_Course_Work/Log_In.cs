@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CS_Course_Work
 {
-    public partial class F_Log_In : Form
+    public partial class F_Log_In : Form // Next up: Load the right UI interface for teacher or student
     {
-
+        string ID_Token,User_ID;
         public F_Log_In()
         {
             InitializeComponent();
@@ -44,11 +46,14 @@ namespace CS_Course_Work
             string Response_As_String = Data_Response.Content.ReadAsStringAsync().Result;
             if (Data_Response.IsSuccessStatusCode)
             {
+                dynamic Login_Result = Newtonsoft.Json.JsonConvert.DeserializeObject(Response_As_String);
+                ID_Token = Login_Result.idToken;
+                User_ID = Login_Result.localId;
                 MessageBox.Show("Account successfully Logged In");
             }
             else
             {
-                MessageBox.Show("Error:" + Response_As_String);
+                MessageBox.Show("Invalid credentials OR enable your wifi");
             }
         }
 
@@ -86,5 +91,37 @@ namespace CS_Course_Work
             }
 
         }
+
+        private void But_Delete_Account_Click(object sender, EventArgs e)
+        {
+            Delete_Account(ID_Token);
+        }
+
+        public void Delete_Account(string idToken)
+        {
+            string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";
+            string URL_for_Deletion = "https://identitytoolkit.googleapis.com/v1/accounts:delete?key=" + API_Key;
+
+            var Delete_Data = new
+            {
+                idToken = idToken
+            };
+
+            string Convert_To_Json = JsonConvert.SerializeObject(Delete_Data);
+            var Organise_Json = new System.Net.Http.StringContent(Convert_To_Json, Encoding.UTF8, "application/json");
+            var HTTP_Client = new System.Net.Http.HttpClient();
+            var Data_Response = HTTP_Client.PostAsync(URL_for_Deletion, Organise_Json).Result;
+            string Response_As_String = Data_Response.Content.ReadAsStringAsync().Result;
+
+            if (Data_Response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Account deleted successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Error deleting account:\n" + Response_As_String);
+            }
+        }
+
     }
 }

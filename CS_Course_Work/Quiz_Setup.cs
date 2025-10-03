@@ -13,9 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace CS_Course_Work
 {
-    public partial class F_Quiz_Info : Form //NEXT UP:read from data base after quiz has been created to reload from teachers homepage. 
-          // Dont forget to include teachers email authenication account in the quiz "Central Quiz" before storing the quiz
-    {                                      // For Database: make sure Newtonsoft is version 13.03, the path as .json at the end,
+    public partial class F_Quiz_Info : Form 
+    {
 
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
         public class Q_Information 
@@ -31,7 +30,7 @@ namespace CS_Course_Work
            public string Time;
         }
         public Q_Information Q_Info= new Q_Information();
-        public string File_name;
+        public string File_name,User_ID;
         public F_Quiz_Info()
         {
             InitializeComponent();
@@ -52,7 +51,7 @@ namespace CS_Course_Work
         public void Write_To_Database()
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+T_Quiz_Name.Text+".json"; 
+            string Location = "Central_Quiz/"+User_ID+"/Account_Type/Quizzes.Json"; 
 
             string Link = Database_URL + Location;
             string Data_As_Json=JsonConvert.SerializeObject(All_Questions);

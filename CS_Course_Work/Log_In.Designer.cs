@@ -71,11 +71,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(-1, 191);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 36);
+            this.label2.Size = new System.Drawing.Size(163, 36);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password :";
             // 
@@ -120,6 +120,7 @@
             this.But_Delete_Account.TabIndex = 7;
             this.But_Delete_Account.Text = "Delete Account";
             this.But_Delete_Account.UseVisualStyleBackColor = true;
+            this.But_Delete_Account.Click += new System.EventHandler(this.But_Delete_Account_Click);
             // 
             // T_Reset_Password
             // 

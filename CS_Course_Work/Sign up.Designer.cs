@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(658, 450);
             this.Controls.Add(this.But_Create_Account);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Combo_Account_Type);
@@ -121,6 +121,7 @@
             this.Controls.Add(this.T_Sign_Up_Email);
             this.Name = "F_Sign_up";
             this.Text = "Sign_up";
+            this.Load += new System.EventHandler(this.F_Sign_up_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
