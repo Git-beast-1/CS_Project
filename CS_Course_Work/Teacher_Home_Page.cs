@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS_Course_Work
 {
-    public partial class Teacher_Home_Page : Form
+    public partial class F_Teacher_Home_Page : Form
     {
-        public Teacher_Home_Page()
+        public F_Teacher_Home_Page()
         {
             InitializeComponent();
         }

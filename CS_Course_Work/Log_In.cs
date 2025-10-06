@@ -57,6 +57,11 @@ namespace CS_Course_Work
             }
         }
 
+        public void Load_Interface()
+        {
+
+        }
+
         private void T_Reset_Password_Click(object sender, EventArgs e)
         {
             if(T_Log_In_Email.Text == string.Empty)
@@ -97,7 +102,7 @@ namespace CS_Course_Work
             Delete_Account(ID_Token);
         }
 
-        public void Delete_Account(string idToken)
+        public void Delete_Account(string idToken)// Dont forget to delete database related to their account 
         {
             string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";
             string URL_for_Deletion = "https://identitytoolkit.googleapis.com/v1/accounts:delete?key=" + API_Key;
