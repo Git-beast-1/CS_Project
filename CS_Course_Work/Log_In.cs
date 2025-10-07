@@ -6,13 +6,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using RestSharp;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace CS_Course_Work
 {
-    public partial class F_Log_In : Form // Next up: Load the right UI interface for teacher or student
+    public partial class F_Log_In : Form // Next up: Delete database with deleted account 
     {
         string ID_Token,User_ID;
         public F_Log_In()
@@ -49,7 +51,7 @@ namespace CS_Course_Work
                 dynamic Login_Result = Newtonsoft.Json.JsonConvert.DeserializeObject(Response_As_String);
                 ID_Token = Login_Result.idToken;
                 User_ID = Login_Result.localId;
-                MessageBox.Show("Account successfully Logged In");
+                Read_Account_Type();
             }
             else
             {
@@ -57,6 +59,41 @@ namespace CS_Course_Work
             }
         }
 
+        public void Read_Account_Type()
+        {
+
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "All_Members/" + User_ID + "/Account_Type.json";
+            string Link = Database_URL + Location;
+            var Connect_to_Firebase = new RestClient(Link);
+            var Get_Request_for_Data = new RestRequest(Link,Method.Get);
+            RestResponse Responsed_Data = Connect_to_Firebase.Execute(Get_Request_for_Data);
+
+            if (Responsed_Data.IsSuccessStatusCode)
+            {
+                string Account_Type = JsonConvert.DeserializeObject<dynamic>(Responsed_Data.Content);
+
+                if(Account_Type == "Student")
+                {
+                    F_Student_Home_Page New_Student = new F_Student_Home_Page();
+                    F_Log_In Current_Log_in = new F_Log_In();
+                    Current_Log_in.Hide();
+                    New_Student.Show();
+
+                }
+                else if(Account_Type == "Teacher")
+                {
+                    F_Teacher_Home_Page New_Teacher = new F_Teacher_Home_Page();
+                    F_Log_In Current_Log_in = new F_Log_In();
+                    Current_Log_in.Hide();
+                    New_Teacher.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Couldn't Load the Interface");
+            }
+        }
         public void Load_Interface()
         {
 
@@ -102,7 +139,12 @@ namespace CS_Course_Work
             Delete_Account(ID_Token);
         }
 
-        public void Delete_Account(string idToken)// Dont forget to delete database related to their account 
+        private void But_Bypass_Login_Click(object sender, EventArgs e)
+        {
+            Read_Account_Type();
+        }
+
+        public void Delete_Account(string idToken)
         {
             string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";
             string URL_for_Deletion = "https://identitytoolkit.googleapis.com/v1/accounts:delete?key=" + API_Key;

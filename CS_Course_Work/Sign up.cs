@@ -57,19 +57,19 @@ namespace CS_Course_Work
                 F_Quiz_Info Access_Quiz_Info = new F_Quiz_Info();
                 Access_Quiz_Info.User_ID = User_ID;
                 MessageBox.Show("Account successfully created");
+                Create_User_Database();
             }
             else
             {
                 MessageBox.Show("Invalid Credentials or enable wifi");
             }
 
-            Create_User_Database();
         }
 
         public void Create_User_Database()
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+User_ID+"/Account_Type.json";
+            string Location = "All_Members/"+User_ID+"/Account_Type.json";
 
             string Link = Database_URL + Location;
             string Data_As_Json = JsonConvert.SerializeObject(Combo_Account_Type.Text);

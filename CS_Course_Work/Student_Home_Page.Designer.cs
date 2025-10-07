@@ -1,6 +1,6 @@
 ﻿namespace CS_Course_Work
 {
-    partial class Student_Home_Page
+    partial class F_Student_Home_Page
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,6 @@
             this.Combo_Quiz_Name.Name = "Combo_Quiz_Name";
             this.Combo_Quiz_Name.Size = new System.Drawing.Size(307, 21);
             this.Combo_Quiz_Name.TabIndex = 0;
-            this.Combo_Quiz_Name.SelectedIndexChanged += new System.EventHandler(this.Combo_Quiz_Name_SelectedIndexChanged);
             // 
             // But_Run_Quiz
             // 
@@ -69,7 +68,7 @@
             this.T_Student_Account.TabIndex = 3;
             this.T_Student_Account.Text = "Account";
             // 
-            // Student_Home_Page
+            // F_Student_Home_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,9 +77,9 @@
             this.Controls.Add(this.T_Student_Name);
             this.Controls.Add(this.But_Run_Quiz);
             this.Controls.Add(this.Combo_Quiz_Name);
-            this.Name = "Student_Home_Page";
+            this.Name = "F_Student_Home_Page";
             this.Text = "Student_Home_Page";
-            this.Load += new System.EventHandler(this.Student_Home_Page_Load);
+            this.Load += new System.EventHandler(this.F_Student_Home_Page_Load);
             this.ResumeLayout(false);
 
         }

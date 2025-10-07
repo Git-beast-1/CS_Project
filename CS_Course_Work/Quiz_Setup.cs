@@ -51,7 +51,7 @@ namespace CS_Course_Work
         public void Write_To_Database()
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+User_ID+"/Account_Type/Quizzes.Json"; 
+            string Location = "Central_Quiz/" +T_Quiz_Name.Text+".json"; 
 
             string Link = Database_URL + Location;
             string Data_As_Json=JsonConvert.SerializeObject(All_Questions);
