@@ -14,7 +14,7 @@ using System.Runtime.CompilerServices;
 
 namespace CS_Course_Work
 {
-    public partial class F_Log_In : Form // Next up: Delete database with deleted account 
+    public partial class F_Log_In : Form // Next up: Delete database with deleted account and read user name
     {
         string ID_Token,User_ID;
         public F_Log_In()
@@ -63,7 +63,7 @@ namespace CS_Course_Work
         {
 
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "All_Members/" + User_ID + "/Account_Type.json";
+            string Location = "All_Members/" + User_ID + "/A.json";
             string Link = Database_URL + Location;
             var Connect_to_Firebase = new RestClient(Link);
             var Get_Request_for_Data = new RestRequest(Link,Method.Get);
@@ -76,17 +76,12 @@ namespace CS_Course_Work
                 if(Account_Type == "Student")
                 {
                     F_Student_Home_Page New_Student = new F_Student_Home_Page();
-                    F_Log_In Current_Log_in = new F_Log_In();
-                    Current_Log_in.Hide();
-                    New_Student.Show();
-
+                    this.Hide();
                 }
                 else if(Account_Type == "Teacher")
                 {
                     F_Teacher_Home_Page New_Teacher = new F_Teacher_Home_Page();
-                    F_Log_In Current_Log_in = new F_Log_In();
-                    Current_Log_in.Hide();
-                    New_Teacher.Show();
+                    this.Hide();
                 }
             }
             else

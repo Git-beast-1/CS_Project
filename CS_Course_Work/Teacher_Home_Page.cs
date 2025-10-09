@@ -21,5 +21,17 @@ namespace CS_Course_Work
         {
 
         }
+
+        private void But_Add_Quiz_Click(object sender, EventArgs e)
+        {
+            F_Question_Template Quiz_Interface = new F_Question_Template();
+            Quiz_Interface.Show();
+            this.Hide();
+        }
+
+        private void F_Teacher_Home_Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

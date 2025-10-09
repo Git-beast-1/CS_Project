@@ -80,6 +80,7 @@
             this.But_Add_Quiz.TabIndex = 20;
             this.But_Add_Quiz.Text = "A";
             this.But_Add_Quiz.UseVisualStyleBackColor = true;
+            this.But_Add_Quiz.Click += new System.EventHandler(this.But_Add_Quiz_Click);
             // 
             // But_Remove_Quiz
             // 
@@ -113,6 +114,7 @@
             this.Controls.Add(this.Combo_Quiz_Menu);
             this.Name = "F_Teacher_Home_Page";
             this.Text = "Teacher_Home_Page";
+            this.Load += new System.EventHandler(this.F_Teacher_Home_Page_Load);
             this.ResumeLayout(false);
 
         }

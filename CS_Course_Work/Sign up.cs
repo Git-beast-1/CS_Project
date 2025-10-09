@@ -13,8 +13,16 @@ using System.Windows.Forms;
 namespace CS_Course_Work
 {
     public partial class F_Sign_up : Form
-    {//NEXT UP: sign up with teacher and student interface
+    {//NEXT UP: 
         string ID_Token, User_ID,T_Account_Type;
+
+        public class Built_In_Info
+        {
+            public string Name;
+            public string Account_Type;
+        }
+
+        Built_In_Info Preset = new Built_In_Info();
         public F_Sign_up()
         {
             InitializeComponent();
@@ -68,11 +76,14 @@ namespace CS_Course_Work
 
         public void Create_User_Database()
         {
+            Preset.Name = T_User_Name.Text;
+            Preset.Account_Type = Combo_Account_Type.Text;
+
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "All_Members/"+User_ID+"/Account_Type.json";
+            string Location = "All_Members/"+User_ID+".json";
 
             string Link = Database_URL + Location;
-            string Data_As_Json = JsonConvert.SerializeObject(Combo_Account_Type.Text);
+            string Data_As_Json = JsonConvert.SerializeObject(Preset);
             var Json_Wrapped = new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
 
             var Sender_client = new HttpClient();
