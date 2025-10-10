@@ -18,10 +18,6 @@ namespace CS_Course_Work
             InitializeComponent();
         }
 
-        private void Quizzes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void But_Add_Quiz_Click(object sender, EventArgs e)
         {
@@ -34,16 +30,6 @@ namespace CS_Course_Work
         private void F_Teacher_Home_Page_Load(object sender, EventArgs e)
         {
             T_Teacher_Name.Text = Teacher_Name;
-        }
-
-        private void T_Teacher_Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void T_All_Student_Results_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

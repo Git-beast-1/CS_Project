@@ -47,8 +47,6 @@
             this.Combo_Quiz_Menu.Size = new System.Drawing.Size(433, 28);
             this.Combo_Quiz_Menu.TabIndex = 0;
             this.Combo_Quiz_Menu.Text = "Quizzes";
-            this.Combo_Quiz_Menu.SelectedIndexChanged += new System.EventHandler(this.Quizzes_SelectedIndexChanged);
-            // 
             // T_Teacher_Account
             // 
             this.T_Teacher_Account.Location = new System.Drawing.Point(18, 65);
@@ -66,7 +64,6 @@
             this.T_Teacher_Name.Size = new System.Drawing.Size(148, 35);
             this.T_Teacher_Name.TabIndex = 4;
             this.T_Teacher_Name.Text = "Name";
-            this.T_Teacher_Name.TextChanged += new System.EventHandler(this.T_Teacher_Name_TextChanged);
             // 
             // T_All_Student_Results
             // 
@@ -76,7 +73,6 @@
             this.T_All_Student_Results.Size = new System.Drawing.Size(373, 584);
             this.T_All_Student_Results.TabIndex = 6;
             this.T_All_Student_Results.Text = "";
-            this.T_All_Student_Results.TextChanged += new System.EventHandler(this.T_All_Student_Results_TextChanged);
             // 
             // But_Add_Quiz
             // 

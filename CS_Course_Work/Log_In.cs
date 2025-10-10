@@ -76,8 +76,6 @@ namespace CS_Course_Work
                 var Data = JsonConvert.DeserializeObject<dynamic>(Responsed_Data.Content);
               string name= Data["Name"].ToString();
                 string type = Data["Account_Type"].ToString();
-
-                MessageBox.Show(name +"/"+ type);
                 if (type == "Student")
                 {
                     F_Student_Home_Page New_Student = new F_Student_Home_Page();
@@ -100,10 +98,6 @@ namespace CS_Course_Work
             {
                 MessageBox.Show("Couldn't Load the Interface");
             }
-        }
-        public void Load_Interface()
-        {
-
         }
 
         private void T_Reset_Password_Click(object sender, EventArgs e)
