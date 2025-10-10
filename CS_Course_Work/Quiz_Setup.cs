@@ -15,7 +15,7 @@ namespace CS_Course_Work
 {
     public partial class F_Quiz_Info : Form 
     {
-
+        public string ID_Location;
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
         public class Q_Information 
         {
@@ -51,7 +51,7 @@ namespace CS_Course_Work
         public void Write_To_Database()
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/" +T_Quiz_Name.Text+".json"; 
+            string Location = "Central_Quiz/"+ID_Location+"/" +T_Quiz_Name.Text+".json"; 
 
             string Link = Database_URL + Location;
             string Data_As_Json=JsonConvert.SerializeObject(All_Questions);
@@ -103,6 +103,11 @@ namespace CS_Course_Work
         {
             Combo_Links.Items.Remove(Combo_Links.Text);
             Combo_Links.Text = string.Empty;
+        }
+
+        private void F_Quiz_Info_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Combo_Student_Accounts_SelectedIndexChanged(object sender, EventArgs e)

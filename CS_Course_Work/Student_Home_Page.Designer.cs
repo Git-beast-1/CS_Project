@@ -38,45 +38,51 @@
             // Combo_Quiz_Name
             // 
             this.Combo_Quiz_Name.FormattingEnabled = true;
-            this.Combo_Quiz_Name.Location = new System.Drawing.Point(496, 15);
+            this.Combo_Quiz_Name.Location = new System.Drawing.Point(744, 23);
+            this.Combo_Quiz_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Combo_Quiz_Name.Name = "Combo_Quiz_Name";
-            this.Combo_Quiz_Name.Size = new System.Drawing.Size(307, 21);
+            this.Combo_Quiz_Name.Size = new System.Drawing.Size(458, 28);
             this.Combo_Quiz_Name.TabIndex = 0;
+            this.Combo_Quiz_Name.SelectedIndexChanged += new System.EventHandler(this.Combo_Quiz_Name_SelectedIndexChanged);
             // 
             // But_Run_Quiz
             // 
-            this.But_Run_Quiz.Location = new System.Drawing.Point(12, 399);
+            this.But_Run_Quiz.Location = new System.Drawing.Point(18, 614);
+            this.But_Run_Quiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.But_Run_Quiz.Name = "But_Run_Quiz";
-            this.But_Run_Quiz.Size = new System.Drawing.Size(196, 74);
+            this.But_Run_Quiz.Size = new System.Drawing.Size(294, 114);
             this.But_Run_Quiz.TabIndex = 1;
             this.But_Run_Quiz.Text = "Run Quiz";
             this.But_Run_Quiz.UseVisualStyleBackColor = true;
             // 
             // T_Student_Name
             // 
-            this.T_Student_Name.Location = new System.Drawing.Point(12, 12);
+            this.T_Student_Name.Location = new System.Drawing.Point(18, 18);
+            this.T_Student_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.T_Student_Name.Name = "T_Student_Name";
-            this.T_Student_Name.Size = new System.Drawing.Size(100, 24);
+            this.T_Student_Name.Size = new System.Drawing.Size(148, 35);
             this.T_Student_Name.TabIndex = 2;
             this.T_Student_Name.Text = "Name";
             // 
             // T_Student_Account
             // 
-            this.T_Student_Account.Location = new System.Drawing.Point(12, 42);
+            this.T_Student_Account.Location = new System.Drawing.Point(18, 65);
+            this.T_Student_Account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.T_Student_Account.Name = "T_Student_Account";
-            this.T_Student_Account.Size = new System.Drawing.Size(100, 24);
+            this.T_Student_Account.Size = new System.Drawing.Size(148, 35);
             this.T_Student_Account.TabIndex = 3;
             this.T_Student_Account.Text = "Account";
             // 
             // F_Student_Home_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 485);
+            this.ClientSize = new System.Drawing.Size(1209, 746);
             this.Controls.Add(this.T_Student_Account);
             this.Controls.Add(this.T_Student_Name);
             this.Controls.Add(this.But_Run_Quiz);
             this.Controls.Add(this.Combo_Quiz_Name);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F_Student_Home_Page";
             this.Text = "Student_Home_Page";
             this.Load += new System.EventHandler(this.F_Student_Home_Page_Load);

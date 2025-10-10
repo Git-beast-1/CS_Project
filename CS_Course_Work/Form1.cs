@@ -14,6 +14,7 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
 {                         // if a user clicks a new question and the new question isnt added to the list of question_setup, when you left pan, it assumes it one the current registered question and hence goes 2 question back
     public partial class F_Question_Template : Form
     {
+        public string ID_Location;
         int I_Is_pair,Q_index,Display_index;// I_is_pair:: for comparing the right and options value 
                               // Q_index :: this holds the index value of the "Complete_Question_setup", it is used for panning around 
                               //Display_index: the number of Questions visible to the teacher 
@@ -203,6 +204,7 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
         {
             F_Quiz_Info Quiz_Info = new F_Quiz_Info();
             Quiz_Info.Show();
+            Quiz_Info.ID_Location = ID_Location;
 
             for(int i = 0;i < Complete_Question_setup.Count; i++)
             {

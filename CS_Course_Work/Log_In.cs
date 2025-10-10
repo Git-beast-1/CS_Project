@@ -26,6 +26,7 @@ namespace CS_Course_Work
         {
             F_Sign_up sign_Up = new F_Sign_up();
             sign_Up.Show();
+            this.Hide();
         }
 
         private void But_Log_IN_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace CS_Course_Work
         {
 
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "All_Members/" + User_ID + "/A.json";
+            string Location = "All_Members/" + User_ID + ".json";
             string Link = Database_URL + Location;
             var Connect_to_Firebase = new RestClient(Link);
             var Get_Request_for_Data = new RestRequest(Link,Method.Get);
@@ -71,16 +72,27 @@ namespace CS_Course_Work
 
             if (Responsed_Data.IsSuccessStatusCode)
             {
-                string Account_Type = JsonConvert.DeserializeObject<dynamic>(Responsed_Data.Content);
+                //F_Sign_up.Built_In_Info Presets = new F_Sign_up.Built_In_Info();
+                var Data = JsonConvert.DeserializeObject<dynamic>(Responsed_Data.Content);
+              string name= Data["Name"].ToString();
+                string type = Data["Account_Type"].ToString();
 
-                if(Account_Type == "Student")
+                MessageBox.Show(name +"/"+ type);
+                if (type == "Student")
                 {
                     F_Student_Home_Page New_Student = new F_Student_Home_Page();
+                    New_Student.Show();
+
+                    New_Student.Student_ID = User_ID;
+                    New_Student.Name = Name;  
                     this.Hide();
                 }
-                else if(Account_Type == "Teacher")
+                else if(type == "Teacher")
                 {
                     F_Teacher_Home_Page New_Teacher = new F_Teacher_Home_Page();
+                    New_Teacher.Show();
+                    New_Teacher.Teacher_ID = User_ID;
+                    New_Teacher.Teacher_Name = name;    
                     this.Hide();
                 }
             }
