@@ -83,7 +83,6 @@
             this.But_Bypass_Login.TabIndex = 4;
             this.But_Bypass_Login.Text = "Bypass";
             this.But_Bypass_Login.UseVisualStyleBackColor = true;
-            this.But_Bypass_Login.Click += new System.EventHandler(this.But_Bypass_Login_Click);
             // 
             // But_Log_IN
             // 

@@ -1,21 +1,23 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using RestSharp;
+using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.CompilerServices;
 
 namespace CS_Course_Work
 {
     public partial class F_Log_In : Form // Next up: Delete database with deleted account and read user name
     {
+        public Dictionary<string,string> Student_And_Student_ID = new Dictionary<string,string>();
         string ID_Token,User_ID;
         public F_Log_In()
         {
@@ -88,6 +90,7 @@ namespace CS_Course_Work
                 else if(type == "Teacher")
                 {
                     F_Teacher_Home_Page New_Teacher = new F_Teacher_Home_Page();
+                    Student_ID_Access(); 
                     New_Teacher.Show();
                     New_Teacher.Teacher_ID = User_ID;
                     New_Teacher.Teacher_Name = name;    
@@ -100,6 +103,38 @@ namespace CS_Course_Work
             }
         }
 
+        public void Student_ID_Access()
+        {
+
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "All_Members/STUDENT_ACCESS_ID/.json";
+            string Link = Database_URL + Location;
+            var Connect_to_Firebase = new RestClient(Link);
+            var Get_Request_for_Data = new RestRequest(Link, Method.Get);
+            RestResponse Responsed_Data = Connect_to_Firebase.Execute(Get_Request_for_Data);
+
+            if (Responsed_Data.IsSuccessStatusCode)
+            {
+                var Data = JsonConvert.DeserializeObject<Dictionary<string,string>>(Responsed_Data.Content);
+
+
+                List<string> Splitted = new List<string>();
+                List<string> Account_Data= new List<string>(Data.Values);
+                for(int i =0; i < Account_Data.Count; i++)
+                {
+                    Splitted.AddRange(Account_Data[i].Split('/'));
+                }
+
+                for(int i = 0; i < Splitted.Count; i += 2)
+                {
+                    Student_And_Student_ID.Add(Splitted[i], Splitted[i+1]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Couldn't Load the Interface");
+            }
+        }
         private void T_Reset_Password_Click(object sender, EventArgs e)
         {
             if(T_Log_In_Email.Text == string.Empty)
@@ -138,11 +173,6 @@ namespace CS_Course_Work
         private void But_Delete_Account_Click(object sender, EventArgs e)
         {
             Delete_Account(ID_Token);
-        }
-
-        private void But_Bypass_Login_Click(object sender, EventArgs e)
-        {
-            Read_Account_Type();
         }
 
         public void Delete_Account(string idToken)

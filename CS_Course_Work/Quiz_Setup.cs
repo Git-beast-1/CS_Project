@@ -13,8 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace CS_Course_Work
 {
-    public partial class F_Quiz_Info : Form 
+    public partial class F_Quiz_Info : Form // Next UP: Send Quiz and teachers ID to students to access the quiz 
     {
+        public F_Log_In From_Log_In;
         public string ID_Location;
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
         public class Q_Information 
@@ -39,6 +40,7 @@ namespace CS_Course_Work
         private void But_Create_Quiz_Click_1(object sender, EventArgs e)
         {
             Write_To_Database();
+            Send_Quiz_Data_To_Student_Database();
 
         }
 
@@ -73,7 +75,29 @@ namespace CS_Course_Work
 
         public void Send_Quiz_Data_To_Student_Database()
         {
+        //    for (int i = 0; i < Combo_Student_Accounts.Items.Count; i++) { 
+        //    string student_ID = Combo_Student_Accounts.Items[i].ToString();
+        //    string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+        //    string Location = "";
 
+        //    string Link = Database_URL + Location;
+        ////    string Data_As_Json = JsonConvert.SerializeObject();
+        ////    var Json_Wrapped = new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
+
+        //  //  var Sender_client = new HttpClient();
+        //  //  var To_Database = Sender_client.PutAsync(Link, Json_Wrapped).Result;
+
+        //    //if (To_Database.IsSuccessStatusCode)
+        //    //{
+        //    //    MessageBox.Show("Write was successful!!");
+        //    //}
+        //    //else
+        //    //{
+        //    //    string errorDetails = To_Database.Content.ReadAsStringAsync().Result;
+        //    //    MessageBox.Show(errorDetails);
+        //    //}
+        //    }
+           
         }
         private void But_Bug_Tester_Click(object sender, EventArgs e)
         {
@@ -107,12 +131,7 @@ namespace CS_Course_Work
 
         private void F_Quiz_Info_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void Combo_Student_Accounts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

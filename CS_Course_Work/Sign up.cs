@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,20 +10,21 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace CS_Course_Work
 {
     public partial class F_Sign_up : Form
     {//NEXT UP: 
-        string ID_Token, User_ID,T_Account_Type;
+        string ID_Token, User_ID, T_Account_Type;
 
         public class Built_In_Info
         {
             public string Name;
             public string Account_Type;
         }
-
         Built_In_Info Preset = new Built_In_Info();
+
         public F_Sign_up()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace CS_Course_Work
         {
             string API_Key = "AIzaSyDftLhFU_RCp5227yeoj9wR9FtG91JUTI8";// to access firebase
             string URl_for_Account_Creation = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + API_Key;
-          
+
             var Sign_Up_Data = new
             {
                 email = T_Sign_Up_Email.Text,
@@ -64,7 +66,6 @@ namespace CS_Course_Work
                 User_ID = Login_Result.localId;
                 F_Quiz_Info Access_Quiz_Info = new F_Quiz_Info();
                 Access_Quiz_Info.User_ID = User_ID;
-                MessageBox.Show("Account successfully created");
                 Create_User_Database();
             }
             else
@@ -80,10 +81,38 @@ namespace CS_Course_Work
             Preset.Account_Type = Combo_Account_Type.Text;
 
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "All_Members/"+User_ID+".json";
+            string Location = "All_Members/" + User_ID + ".json";
 
             string Link = Database_URL + Location;
             string Data_As_Json = JsonConvert.SerializeObject(Preset);
+            var Json_Wrapped = new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
+
+            var Sender_client = new HttpClient();
+            var To_Database = Sender_client.PutAsync(Link, Json_Wrapped).Result;
+
+            if (To_Database.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Write was successful!!");
+            }
+            else
+            {
+                string errorDetails = To_Database.Content.ReadAsStringAsync().Result;
+                MessageBox.Show(errorDetails);
+            }
+
+            if (Combo_Account_Type.Text == "Student")
+            {
+                Add_Student_To_Access_Dictionary();
+            }
+        }
+        public void Add_Student_To_Access_Dictionary()
+        {
+            string Account_Data = T_User_Name.Text+"/" + User_ID;
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "All_Members/STUDENT_ACCESS_ID/" +T_User_Name.Text+".json";
+            
+            string Link = Database_URL + Location;
+            string Data_As_Json = JsonConvert.SerializeObject(Account_Data);
             var Json_Wrapped = new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
 
             var Sender_client = new HttpClient();
