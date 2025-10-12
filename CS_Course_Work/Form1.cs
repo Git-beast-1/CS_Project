@@ -227,7 +227,6 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
         private void But_Tester_Click(object sender, EventArgs e)// a Debugging button
         {
 
-            MessageBox.Show(Complete_Question_setup.Count.ToString());
         }
     } 
 }

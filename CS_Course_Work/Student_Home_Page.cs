@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace CS_Course_Work
 {
-    public partial class F_Student_Home_Page : Form //NEXT UP: read the quiz and quiz info of the selected quiz from the central database
+    public partial class F_Student_Home_Page : Form //NEXT UP: read the quiz using student quiz info of the selected quiz from the central database
     {
         public string Student_ID, Student_Name;
         public List<F_Question_Template.Question_Setup> Available_Question;
-        public F_Quiz_Info.Q_Information Availabel_Quiz_Info;
         public F_Student_Home_Page()
         {
             InitializeComponent();
