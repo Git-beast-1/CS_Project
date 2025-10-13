@@ -53,7 +53,6 @@
             this.T_Question.Size = new System.Drawing.Size(355, 206);
             this.T_Question.TabIndex = 0;
             this.T_Question.Text = "";
-            this.T_Question.TextChanged += new System.EventHandler(this.T_Question_TextChanged);
             // 
             // T_Op_1
             // 

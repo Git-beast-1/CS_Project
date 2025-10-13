@@ -212,11 +212,6 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
             }
         }
 
-        private void T_Question_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void But_Update_Click(object sender, EventArgs e)
         {
             Is_Update_Click = true;
