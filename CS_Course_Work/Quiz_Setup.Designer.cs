@@ -55,10 +55,9 @@
             // 
             // T_Quiz_Name
             // 
-            this.T_Quiz_Name.Location = new System.Drawing.Point(200, 65);
-            this.T_Quiz_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Quiz_Name.Location = new System.Drawing.Point(133, 42);
             this.T_Quiz_Name.Name = "T_Quiz_Name";
-            this.T_Quiz_Name.Size = new System.Drawing.Size(208, 22);
+            this.T_Quiz_Name.Size = new System.Drawing.Size(140, 16);
             this.T_Quiz_Name.TabIndex = 0;
             this.T_Quiz_Name.Text = "";
             // 
@@ -66,10 +65,9 @@
             // 
             this.L_Quiz_Name.AutoSize = true;
             this.L_Quiz_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Quiz_Name.Location = new System.Drawing.Point(74, 63);
-            this.L_Quiz_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Quiz_Name.Location = new System.Drawing.Point(49, 41);
             this.L_Quiz_Name.Name = "L_Quiz_Name";
-            this.L_Quiz_Name.Size = new System.Drawing.Size(116, 25);
+            this.L_Quiz_Name.Size = new System.Drawing.Size(82, 17);
             this.L_Quiz_Name.TabIndex = 1;
             this.L_Quiz_Name.Text = "Quiz Name:";
             // 
@@ -77,19 +75,17 @@
             // 
             this.L_Student_Account.AutoSize = true;
             this.L_Student_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Student_Account.Location = new System.Drawing.Point(22, 98);
-            this.L_Student_Account.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Student_Account.Location = new System.Drawing.Point(25, 67);
             this.L_Student_Account.Name = "L_Student_Account";
-            this.L_Student_Account.Size = new System.Drawing.Size(163, 25);
+            this.L_Student_Account.Size = new System.Drawing.Size(102, 17);
             this.L_Student_Account.TabIndex = 3;
-            this.L_Student_Account.Text = "Student Account:";
+            this.L_Student_Account.Text = "Student Name:";
             // 
             // T_Due_Date
             // 
-            this.T_Due_Date.Location = new System.Drawing.Point(200, 132);
-            this.T_Due_Date.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Due_Date.Location = new System.Drawing.Point(133, 86);
             this.T_Due_Date.Name = "T_Due_Date";
-            this.T_Due_Date.Size = new System.Drawing.Size(410, 22);
+            this.T_Due_Date.Size = new System.Drawing.Size(275, 16);
             this.T_Due_Date.TabIndex = 4;
             this.T_Due_Date.Text = "";
             // 
@@ -97,30 +93,27 @@
             // 
             this.L_Due_Date.AutoSize = true;
             this.L_Due_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Due_Date.Location = new System.Drawing.Point(88, 134);
-            this.L_Due_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Due_Date.Location = new System.Drawing.Point(59, 87);
             this.L_Due_Date.Name = "L_Due_Date";
-            this.L_Due_Date.Size = new System.Drawing.Size(100, 25);
+            this.L_Due_Date.Size = new System.Drawing.Size(72, 17);
             this.L_Due_Date.TabIndex = 5;
             this.L_Due_Date.Text = "Due Date:";
             // 
             // Combo_Links
             // 
             this.Combo_Links.FormattingEnabled = true;
-            this.Combo_Links.Location = new System.Drawing.Point(200, 166);
-            this.Combo_Links.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Combo_Links.Location = new System.Drawing.Point(133, 108);
             this.Combo_Links.Name = "Combo_Links";
-            this.Combo_Links.Size = new System.Drawing.Size(410, 28);
+            this.Combo_Links.Size = new System.Drawing.Size(275, 21);
             this.Combo_Links.TabIndex = 6;
             // 
             // L_Links
             // 
             this.L_Links.AutoSize = true;
             this.L_Links.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Links.Location = new System.Drawing.Point(129, 172);
-            this.L_Links.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Links.Location = new System.Drawing.Point(86, 112);
             this.L_Links.Name = "L_Links";
-            this.L_Links.Size = new System.Drawing.Size(64, 25);
+            this.L_Links.Size = new System.Drawing.Size(45, 17);
             this.L_Links.TabIndex = 7;
             this.L_Links.Text = "Links:";
             // 
@@ -128,19 +121,17 @@
             // 
             this.L_Retry.AutoSize = true;
             this.L_Retry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Retry.Location = new System.Drawing.Point(122, 225);
-            this.L_Retry.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Retry.Location = new System.Drawing.Point(81, 146);
             this.L_Retry.Name = "L_Retry";
-            this.L_Retry.Size = new System.Drawing.Size(63, 25);
+            this.L_Retry.Size = new System.Drawing.Size(46, 17);
             this.L_Retry.TabIndex = 8;
             this.L_Retry.Text = "Retry:";
             // 
             // But_Retry_Enabled
             // 
-            this.But_Retry_Enabled.Location = new System.Drawing.Point(200, 215);
-            this.But_Retry_Enabled.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Retry_Enabled.Location = new System.Drawing.Point(133, 140);
             this.But_Retry_Enabled.Name = "But_Retry_Enabled";
-            this.But_Retry_Enabled.Size = new System.Drawing.Size(40, 35);
+            this.But_Retry_Enabled.Size = new System.Drawing.Size(27, 23);
             this.But_Retry_Enabled.TabIndex = 9;
             this.But_Retry_Enabled.Text = "F";
             this.But_Retry_Enabled.UseVisualStyleBackColor = true;
@@ -149,28 +140,25 @@
             // 
             this.L_Storage_Time.AutoSize = true;
             this.L_Storage_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Storage_Time.Location = new System.Drawing.Point(45, 258);
-            this.L_Storage_Time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Storage_Time.Location = new System.Drawing.Point(30, 168);
             this.L_Storage_Time.Name = "L_Storage_Time";
-            this.L_Storage_Time.Size = new System.Drawing.Size(136, 25);
+            this.L_Storage_Time.Size = new System.Drawing.Size(97, 17);
             this.L_Storage_Time.TabIndex = 10;
             this.L_Storage_Time.Text = "Storage Time:";
             // 
             // T_Storage_Time
             // 
-            this.T_Storage_Time.Location = new System.Drawing.Point(200, 262);
-            this.T_Storage_Time.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Storage_Time.Location = new System.Drawing.Point(133, 170);
             this.T_Storage_Time.Name = "T_Storage_Time";
-            this.T_Storage_Time.Size = new System.Drawing.Size(208, 22);
+            this.T_Storage_Time.Size = new System.Drawing.Size(140, 16);
             this.T_Storage_Time.TabIndex = 11;
             this.T_Storage_Time.Text = "";
             // 
             // But_Timer_Enabled
             // 
-            this.But_Timer_Enabled.Location = new System.Drawing.Point(200, 291);
-            this.But_Timer_Enabled.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Timer_Enabled.Location = new System.Drawing.Point(133, 189);
             this.But_Timer_Enabled.Name = "But_Timer_Enabled";
-            this.But_Timer_Enabled.Size = new System.Drawing.Size(40, 35);
+            this.But_Timer_Enabled.Size = new System.Drawing.Size(27, 23);
             this.But_Timer_Enabled.TabIndex = 13;
             this.But_Timer_Enabled.Text = "F";
             this.But_Timer_Enabled.UseVisualStyleBackColor = true;
@@ -179,30 +167,27 @@
             // 
             this.L_Timer.AutoSize = true;
             this.L_Timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Timer.Location = new System.Drawing.Point(118, 295);
-            this.L_Timer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Timer.Location = new System.Drawing.Point(79, 192);
             this.L_Timer.Name = "L_Timer";
-            this.L_Timer.Size = new System.Drawing.Size(68, 25);
+            this.L_Timer.Size = new System.Drawing.Size(48, 17);
             this.L_Timer.TabIndex = 12;
             this.L_Timer.Text = "Timer:";
             // 
             // T_Timer_Seconds
             // 
             this.T_Timer_Seconds.Enabled = false;
-            this.T_Timer_Seconds.Location = new System.Drawing.Point(200, 335);
-            this.T_Timer_Seconds.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Timer_Seconds.Location = new System.Drawing.Point(133, 218);
             this.T_Timer_Seconds.Name = "T_Timer_Seconds";
-            this.T_Timer_Seconds.Size = new System.Drawing.Size(208, 22);
+            this.T_Timer_Seconds.Size = new System.Drawing.Size(140, 16);
             this.T_Timer_Seconds.TabIndex = 14;
             this.T_Timer_Seconds.Text = "";
             // 
             // But_Create_Quiz
             // 
             this.But_Create_Quiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.But_Create_Quiz.Location = new System.Drawing.Point(200, 369);
-            this.But_Create_Quiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Create_Quiz.Location = new System.Drawing.Point(133, 240);
             this.But_Create_Quiz.Name = "But_Create_Quiz";
-            this.But_Create_Quiz.Size = new System.Drawing.Size(210, 69);
+            this.But_Create_Quiz.Size = new System.Drawing.Size(140, 45);
             this.But_Create_Quiz.TabIndex = 15;
             this.But_Create_Quiz.Text = "Create Quiz";
             this.But_Create_Quiz.UseVisualStyleBackColor = true;
@@ -211,19 +196,17 @@
             // Combo_Student_Accounts
             // 
             this.Combo_Student_Accounts.FormattingEnabled = true;
-            this.Combo_Student_Accounts.Location = new System.Drawing.Point(200, 97);
-            this.Combo_Student_Accounts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Combo_Student_Accounts.Location = new System.Drawing.Point(133, 63);
             this.Combo_Student_Accounts.Name = "Combo_Student_Accounts";
-            this.Combo_Student_Accounts.Size = new System.Drawing.Size(410, 28);
+            this.Combo_Student_Accounts.Size = new System.Drawing.Size(275, 21);
             this.Combo_Student_Accounts.TabIndex = 16;
             // 
             // T_Version_Number
             // 
             this.T_Version_Number.Enabled = false;
-            this.T_Version_Number.Location = new System.Drawing.Point(200, 31);
-            this.T_Version_Number.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Version_Number.Location = new System.Drawing.Point(133, 20);
             this.T_Version_Number.Name = "T_Version_Number";
-            this.T_Version_Number.Size = new System.Drawing.Size(208, 22);
+            this.T_Version_Number.Size = new System.Drawing.Size(140, 16);
             this.T_Version_Number.TabIndex = 17;
             this.T_Version_Number.Text = "";
             // 
@@ -231,19 +214,17 @@
             // 
             this.L_Version_Number.AutoSize = true;
             this.L_Version_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Version_Number.Location = new System.Drawing.Point(26, 29);
-            this.L_Version_Number.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L_Version_Number.Location = new System.Drawing.Point(17, 19);
             this.L_Version_Number.Name = "L_Version_Number";
-            this.L_Version_Number.Size = new System.Drawing.Size(153, 25);
+            this.L_Version_Number.Size = new System.Drawing.Size(110, 17);
             this.L_Version_Number.TabIndex = 18;
             this.L_Version_Number.Text = "Version Number";
             // 
             // But_Add_Student_Account
             // 
-            this.But_Add_Student_Account.Location = new System.Drawing.Point(621, 98);
-            this.But_Add_Student_Account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Add_Student_Account.Location = new System.Drawing.Point(414, 64);
             this.But_Add_Student_Account.Name = "But_Add_Student_Account";
-            this.But_Add_Student_Account.Size = new System.Drawing.Size(40, 35);
+            this.But_Add_Student_Account.Size = new System.Drawing.Size(27, 23);
             this.But_Add_Student_Account.TabIndex = 19;
             this.But_Add_Student_Account.Text = "A";
             this.But_Add_Student_Account.UseVisualStyleBackColor = true;
@@ -251,10 +232,9 @@
             // 
             // But_Add_Links
             // 
-            this.But_Add_Links.Location = new System.Drawing.Point(621, 172);
-            this.But_Add_Links.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Add_Links.Location = new System.Drawing.Point(414, 112);
             this.But_Add_Links.Name = "But_Add_Links";
-            this.But_Add_Links.Size = new System.Drawing.Size(40, 35);
+            this.But_Add_Links.Size = new System.Drawing.Size(27, 23);
             this.But_Add_Links.TabIndex = 20;
             this.But_Add_Links.Text = "A";
             this.But_Add_Links.UseVisualStyleBackColor = true;
@@ -263,10 +243,9 @@
             // But_Bug_Tester
             // 
             this.But_Bug_Tester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.But_Bug_Tester.Location = new System.Drawing.Point(470, 335);
-            this.But_Bug_Tester.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Bug_Tester.Location = new System.Drawing.Point(313, 218);
             this.But_Bug_Tester.Name = "But_Bug_Tester";
-            this.But_Bug_Tester.Size = new System.Drawing.Size(178, 52);
+            this.But_Bug_Tester.Size = new System.Drawing.Size(119, 34);
             this.But_Bug_Tester.TabIndex = 21;
             this.But_Bug_Tester.Text = "Bug Tester";
             this.But_Bug_Tester.UseVisualStyleBackColor = true;
@@ -274,10 +253,9 @@
             // 
             // But_Remove_Student_Account
             // 
-            this.But_Remove_Student_Account.Location = new System.Drawing.Point(670, 98);
-            this.But_Remove_Student_Account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Remove_Student_Account.Location = new System.Drawing.Point(447, 64);
             this.But_Remove_Student_Account.Name = "But_Remove_Student_Account";
-            this.But_Remove_Student_Account.Size = new System.Drawing.Size(40, 35);
+            this.But_Remove_Student_Account.Size = new System.Drawing.Size(27, 23);
             this.But_Remove_Student_Account.TabIndex = 22;
             this.But_Remove_Student_Account.Text = "R";
             this.But_Remove_Student_Account.UseVisualStyleBackColor = true;
@@ -285,10 +263,9 @@
             // 
             // But_Remove_Links
             // 
-            this.But_Remove_Links.Location = new System.Drawing.Point(670, 172);
-            this.But_Remove_Links.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Remove_Links.Location = new System.Drawing.Point(447, 112);
             this.But_Remove_Links.Name = "But_Remove_Links";
-            this.But_Remove_Links.Size = new System.Drawing.Size(40, 35);
+            this.But_Remove_Links.Size = new System.Drawing.Size(27, 23);
             this.But_Remove_Links.TabIndex = 23;
             this.But_Remove_Links.Text = "R";
             this.But_Remove_Links.UseVisualStyleBackColor = true;
@@ -296,9 +273,9 @@
             // 
             // F_Quiz_Info
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 486);
+            this.ClientSize = new System.Drawing.Size(476, 316);
             this.Controls.Add(this.But_Remove_Links);
             this.Controls.Add(this.But_Remove_Student_Account);
             this.Controls.Add(this.But_Bug_Tester);
@@ -322,7 +299,6 @@
             this.Controls.Add(this.L_Student_Account);
             this.Controls.Add(this.L_Quiz_Name);
             this.Controls.Add(this.T_Quiz_Name);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F_Quiz_Info";
             this.Text = "Quiz_Info";
             this.Load += new System.EventHandler(this.F_Quiz_Info_Load);

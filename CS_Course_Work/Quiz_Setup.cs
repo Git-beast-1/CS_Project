@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace CS_Course_Work
 {
-    public partial class F_Quiz_Info : Form // Next UP: Send Quiz and teachers ID to students to access the quiz 
+    public partial class F_Quiz_Info : Form // 
     {
         public static Dictionary<string, string> Student_And_Student_ID = new Dictionary<string, string>();
 

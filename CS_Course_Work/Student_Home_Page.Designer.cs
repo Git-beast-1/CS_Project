@@ -32,6 +32,7 @@
             this.T_Student_Name = new System.Windows.Forms.RichTextBox();
             this.d = new System.ComponentModel.BackgroundWorker();
             this.But_Tester = new System.Windows.Forms.Button();
+            this.Bug_Test_Test = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Combo_Quiz_Name
@@ -61,17 +62,25 @@
             this.But_Tester.UseVisualStyleBackColor = true;
             this.But_Tester.Click += new System.EventHandler(this.But_Tester_Click);
             // 
+            // Bug_Test_Test
+            // 
+            this.Bug_Test_Test.Location = new System.Drawing.Point(404, 140);
+            this.Bug_Test_Test.Name = "Bug_Test_Test";
+            this.Bug_Test_Test.Size = new System.Drawing.Size(361, 96);
+            this.Bug_Test_Test.TabIndex = 18;
+            this.Bug_Test_Test.Text = "";
+            // 
             // F_Student_Home_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 485);
+            this.Controls.Add(this.Bug_Test_Test);
             this.Controls.Add(this.But_Tester);
             this.Controls.Add(this.T_Student_Name);
             this.Controls.Add(this.Combo_Quiz_Name);
             this.Name = "F_Student_Home_Page";
             this.Text = "Student_Home_Page";
-            this.Load += new System.EventHandler(this.F_Student_Home_Page_Load);
             this.ResumeLayout(false);
 
         }
@@ -82,5 +91,6 @@
         private System.Windows.Forms.RichTextBox T_Student_Name;
         private System.ComponentModel.BackgroundWorker d;
         private System.Windows.Forms.Button But_Tester;
+        private System.Windows.Forms.RichTextBox Bug_Test_Test;
     }
 }
