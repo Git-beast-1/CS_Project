@@ -16,5 +16,10 @@ namespace CS_Course_Work
         {
             InitializeComponent();
         }
+
+        private void T_Correct_Questions_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

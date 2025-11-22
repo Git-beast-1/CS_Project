@@ -19,8 +19,8 @@ namespace CS_Course_Work
 
         public class Student_Quiz_Info
         {
-            public string Quiz_Name;
-            public string Teacher_ID;
+            public string Quiz_Name { get; set; }
+            public string Teacher_ID { get; set; }
         }
 
         public List<Student_Quiz_Info> Quiz_Data = new List<Student_Quiz_Info>();
@@ -45,22 +45,22 @@ namespace CS_Course_Work
 
             if (Responsed_Data.IsSuccessStatusCode)
             {
-              var Data = JsonConvert.DeserializeObject(Responsed_Data.Content);
-                Bug_Test_Test.Text = Data.ToString();
-                string Data_To_String = Data.ToString();
-                List<string> Q_T = new List<string>();
-                string name, quiz;
-                int K;
-                Q_T.AddRange(Data_To_String.Split('\n'));
-                for (int j = 2; j < Q_T.Count; j += 4)
+                var quizzes = JsonConvert.DeserializeObject<Dictionary<string, Student_Quiz_Info>>(Responsed_Data.Content);
+
+                // Keep the full objects if needed
+                Quiz_Data = quizzes.Values.ToList();
+
+                // Build a flat list: [Quiz_Name, Teacher_ID, Quiz_Name2, Teacher_ID2, ...]
+                List<string> quizStrings = new List<string>();
+                foreach (var q in quizzes.Values)
                 {
-                    K = j + 1;
-                    name = Q_T[j];
-                    quiz = Q_T[K];
+                    quizStrings.Add(q.Quiz_Name);
+                    quizStrings.Add(q.Teacher_ID);
+                }
 
-                    MessageBox.Show(name);
-                    MessageBox.Show(quiz);
-
+                for(int i = 0; i < quizStrings.Count; i++)
+                {
+                    MessageBox.Show(quizStrings[i]);
                 }
             }
             else
