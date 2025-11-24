@@ -41,28 +41,25 @@
             // 
             // T_Teacher_Account
             // 
-            this.T_Teacher_Account.Location = new System.Drawing.Point(18, 65);
-            this.T_Teacher_Account.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Teacher_Account.Location = new System.Drawing.Point(12, 42);
             this.T_Teacher_Account.Name = "T_Teacher_Account";
-            this.T_Teacher_Account.Size = new System.Drawing.Size(148, 35);
+            this.T_Teacher_Account.Size = new System.Drawing.Size(100, 24);
             this.T_Teacher_Account.TabIndex = 5;
             this.T_Teacher_Account.Text = "Account";
             // 
             // T_Teacher_Name
             // 
-            this.T_Teacher_Name.Location = new System.Drawing.Point(18, 18);
-            this.T_Teacher_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Teacher_Name.Location = new System.Drawing.Point(12, 12);
             this.T_Teacher_Name.Name = "T_Teacher_Name";
-            this.T_Teacher_Name.Size = new System.Drawing.Size(148, 35);
+            this.T_Teacher_Name.Size = new System.Drawing.Size(100, 24);
             this.T_Teacher_Name.TabIndex = 4;
             this.T_Teacher_Name.Text = "Name";
             // 
             // But_Add_Quiz
             // 
-            this.But_Add_Quiz.Location = new System.Drawing.Point(703, 499);
-            this.But_Add_Quiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Add_Quiz.Location = new System.Drawing.Point(469, 324);
             this.But_Add_Quiz.Name = "But_Add_Quiz";
-            this.But_Add_Quiz.Size = new System.Drawing.Size(238, 86);
+            this.But_Add_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Add_Quiz.TabIndex = 20;
             this.But_Add_Quiz.Text = "Create Quiz";
             this.But_Add_Quiz.UseVisualStyleBackColor = true;
@@ -70,30 +67,27 @@
             // 
             // But_Remove_Quiz
             // 
-            this.But_Remove_Quiz.Location = new System.Drawing.Point(949, 499);
-            this.But_Remove_Quiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Remove_Quiz.Location = new System.Drawing.Point(633, 324);
             this.But_Remove_Quiz.Name = "But_Remove_Quiz";
-            this.But_Remove_Quiz.Size = new System.Drawing.Size(238, 86);
+            this.But_Remove_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Remove_Quiz.TabIndex = 21;
             this.But_Remove_Quiz.Text = "Delete Quiz";
             this.But_Remove_Quiz.UseVisualStyleBackColor = true;
             // 
             // But_Edit_Quiz
             // 
-            this.But_Edit_Quiz.Location = new System.Drawing.Point(949, 592);
-            this.But_Edit_Quiz.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Edit_Quiz.Location = new System.Drawing.Point(633, 385);
             this.But_Edit_Quiz.Name = "But_Edit_Quiz";
-            this.But_Edit_Quiz.Size = new System.Drawing.Size(238, 86);
+            this.But_Edit_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Edit_Quiz.TabIndex = 22;
             this.But_Edit_Quiz.Text = "Edit Quiz";
             this.But_Edit_Quiz.UseVisualStyleBackColor = true;
             // 
             // But_List_Students
             // 
-            this.But_List_Students.Location = new System.Drawing.Point(703, 592);
-            this.But_List_Students.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_List_Students.Location = new System.Drawing.Point(469, 385);
             this.But_List_Students.Name = "But_List_Students";
-            this.But_List_Students.Size = new System.Drawing.Size(238, 86);
+            this.But_List_Students.Size = new System.Drawing.Size(159, 56);
             this.But_List_Students.TabIndex = 23;
             this.But_List_Students.Text = "Students";
             this.But_List_Students.UseVisualStyleBackColor = true;
@@ -101,33 +95,34 @@
             // Combo_Quizzes
             // 
             this.Combo_Quizzes.FormattingEnabled = true;
-            this.Combo_Quizzes.Location = new System.Drawing.Point(703, 25);
+            this.Combo_Quizzes.Location = new System.Drawing.Point(469, 16);
+            this.Combo_Quizzes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Combo_Quizzes.Name = "Combo_Quizzes";
-            this.Combo_Quizzes.Size = new System.Drawing.Size(484, 28);
+            this.Combo_Quizzes.Size = new System.Drawing.Size(324, 21);
             this.Combo_Quizzes.TabIndex = 24;
             // 
             // T_Quiz_Details
             // 
-            this.T_Quiz_Details.Location = new System.Drawing.Point(194, 50);
+            this.T_Quiz_Details.Location = new System.Drawing.Point(136, 33);
+            this.T_Quiz_Details.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.T_Quiz_Details.Name = "T_Quiz_Details";
-            this.T_Quiz_Details.Size = new System.Drawing.Size(490, 458);
+            this.T_Quiz_Details.Size = new System.Drawing.Size(328, 299);
             this.T_Quiz_Details.TabIndex = 25;
             this.T_Quiz_Details.Text = "";
             // 
             // T_Quiz_Detail_Name
             // 
-            this.T_Quiz_Detail_Name.Location = new System.Drawing.Point(194, 18);
-            this.T_Quiz_Detail_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Quiz_Detail_Name.Location = new System.Drawing.Point(136, 13);
             this.T_Quiz_Detail_Name.Name = "T_Quiz_Detail_Name";
-            this.T_Quiz_Detail_Name.Size = new System.Drawing.Size(148, 35);
+            this.T_Quiz_Detail_Name.Size = new System.Drawing.Size(100, 24);
             this.T_Quiz_Detail_Name.TabIndex = 26;
             this.T_Quiz_Detail_Name.Text = "Quiz Details";
             // 
             // F_Teacher_Home_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.T_Quiz_Detail_Name);
             this.Controls.Add(this.T_Quiz_Details);
             this.Controls.Add(this.Combo_Quizzes);
@@ -137,7 +132,6 @@
             this.Controls.Add(this.But_Add_Quiz);
             this.Controls.Add(this.T_Teacher_Account);
             this.Controls.Add(this.T_Teacher_Name);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F_Teacher_Home_Page";
             this.Text = "Teacher_Home_Page";
             this.Load += new System.EventHandler(this.F_Teacher_Home_Page_Load);

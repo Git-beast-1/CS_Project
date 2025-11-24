@@ -80,9 +80,8 @@ namespace CS_Course_Work
                 if (type == "Student")
                 {
                     F_Student_Home_Page New_Student = new F_Student_Home_Page();
+                    New_Student.Student_ID = User_ID; 
                     New_Student.Show();
-
-                    New_Student.Student_ID = User_ID;
                     New_Student.Name = Name;  
                     this.Hide();
                 }

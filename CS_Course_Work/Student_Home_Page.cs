@@ -16,7 +16,7 @@ namespace CS_Course_Work
     {
         public string Student_ID, Student_Name;
         public List<F_Question_Template.Question_Setup> Available_Question;
-
+        List<string> quizStrings = new List<string>();
         public class Student_Quiz_Info
         {
             public string Quiz_Name { get; set; }
@@ -27,11 +27,14 @@ namespace CS_Course_Work
         public F_Student_Home_Page()
         {
             InitializeComponent();
-        }
+        }     
 
-        private void But_Tester_Click(object sender, EventArgs e)
+        private void F_Student_Home_Page_Load(object sender, EventArgs e)
         {
             List_All_Available_Quizzes();
+        }
+        private void But_Tester_Click(object sender, EventArgs e)
+        {
         }
 
         public void List_All_Available_Quizzes()
@@ -48,25 +51,38 @@ namespace CS_Course_Work
                 var quizzes = JsonConvert.DeserializeObject<Dictionary<string, Student_Quiz_Info>>(Responsed_Data.Content);
 
                 // Keep the full objects if needed
-                Quiz_Data = quizzes.Values.ToList();
+               // Quiz_Data = quizzes.Values.ToList();
 
                 // Build a flat list: [Quiz_Name, Teacher_ID, Quiz_Name2, Teacher_ID2, ...]
-                List<string> quizStrings = new List<string>();
+
                 foreach (var q in quizzes.Values)
                 {
                     quizStrings.Add(q.Quiz_Name);
                     quizStrings.Add(q.Teacher_ID);
                 }
 
-                for(int i = 0; i < quizStrings.Count; i++)
+                for (int i = 0; i < quizStrings.Count; i += 2)
                 {
-                    MessageBox.Show(quizStrings[i]);
+                    int breaking_range = quizStrings.Count - i;
+                    if (breaking_range == 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Combo_Quiz_Name.Items.Add(quizStrings[i]);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Couldn't Load the Interface");
             }
+        }
+
+        private void But_Start_Quiz_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void Read_Quiz_From_Teacher_Database()
