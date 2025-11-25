@@ -78,7 +78,7 @@
             // 
             // But_Submit_Quiz
             // 
-            this.But_Submit_Quiz.Location = new System.Drawing.Point(639, 303);
+            this.But_Submit_Quiz.Location = new System.Drawing.Point(639, 309);
             this.But_Submit_Quiz.Name = "But_Submit_Quiz";
             this.But_Submit_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Submit_Quiz.TabIndex = 23;
@@ -87,7 +87,7 @@
             // 
             // But_Start_Quiz
             // 
-            this.But_Start_Quiz.Location = new System.Drawing.Point(475, 303);
+            this.But_Start_Quiz.Location = new System.Drawing.Point(475, 309);
             this.But_Start_Quiz.Name = "But_Start_Quiz";
             this.But_Start_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Start_Quiz.TabIndex = 22;
@@ -97,7 +97,7 @@
             // 
             // But_List_Teachers
             // 
-            this.But_List_Teachers.Location = new System.Drawing.Point(475, 365);
+            this.But_List_Teachers.Location = new System.Drawing.Point(474, 371);
             this.But_List_Teachers.Name = "But_List_Teachers";
             this.But_List_Teachers.Size = new System.Drawing.Size(159, 56);
             this.But_List_Teachers.TabIndex = 25;
@@ -106,7 +106,7 @@
             // 
             // But_Quiz_Results
             // 
-            this.But_Quiz_Results.Location = new System.Drawing.Point(639, 365);
+            this.But_Quiz_Results.Location = new System.Drawing.Point(639, 371);
             this.But_Quiz_Results.Name = "But_Quiz_Results";
             this.But_Quiz_Results.Size = new System.Drawing.Size(159, 56);
             this.But_Quiz_Results.TabIndex = 24;
