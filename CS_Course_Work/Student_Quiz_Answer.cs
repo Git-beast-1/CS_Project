@@ -10,16 +10,12 @@ using System.Windows.Forms;
 
 namespace CS_Course_Work
 {
-    public partial class Student_Quiz_Answer : Form
+    public partial class F_Student_Quiz_Answer : Form
     {
-        public Student_Quiz_Answer()
+        public List<F_Student_Home_Page.Retrieved_Question_Set_UP> Current_Questions = new List<F_Student_Home_Page.Retrieved_Question_Set_UP>();
+        public F_Student_Quiz_Answer()
         {
             InitializeComponent();
-        }
-
-        private void But_Left_Pan_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

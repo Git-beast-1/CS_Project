@@ -22,7 +22,7 @@ namespace CS_Course_Work
             public string Right_Answer {  get; set; }
         }
         public string Student_ID, Student_Name;
-        public List<Retrieved_Question_Set_UP> Available_Question;
+        public List<Retrieved_Question_Set_UP> Available_Question = new List<Retrieved_Question_Set_UP>();
         List<string> quizStrings = new List<string>();
         List<string> Each_Questions = new List<string>();
         public class Student_Quiz_Info
@@ -107,23 +107,28 @@ namespace CS_Course_Work
 
             if (Responsed_Data.IsSuccessStatusCode)
             {
-                var data = JsonConvert.DeserializeObject<Dictionary<string,Retrieved_Question_Set_UP>>(Responsed_Data.Content);
-                MessageBox.Show(data.ToString());
+                List<Retrieved_Question_Set_UP> data = JsonConvert.DeserializeObject<List<Retrieved_Question_Set_UP>>(Responsed_Data.Content);
 
-                foreach (var q in data.Values)
-                {
-                    Each_Questions.Add(q.Question);
-                    Each_Questions.Add(q.Options);
-                    Each_Questions.Add(q.Right_Answer);
+                foreach(var item in data)
+                {          
+                    Retrieved_Question_Set_UP Temp_Holder = new Retrieved_Question_Set_UP();
+                    Temp_Holder.Options = item.Options;
+                    Temp_Holder.Question = item.Question;
+                    Temp_Holder.Right_Answer = item.Right_Answer;
+                    Available_Question.Add(Temp_Holder);   
                 }
-                for (int i = 0; i < Each_Questions.Count; i++)
+
+                F_Student_Quiz_Answer Student_Quiz_Form = new F_Student_Quiz_Answer();
+                for(int i=0; i < Available_Question.Count; i++)
                 {
-                    MessageBox.Show(Each_Questions[i]);
+                    Student_Quiz_Form.Current_Questions.Add(Available_Question[i]);
                 }
+                Student_Quiz_Form.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("THIS QUIZ DOESN'T EXISTS!!");
+                MessageBox.Show("THIS QUIZ DOESN'T EXIST!!");
             }
         }
     }
