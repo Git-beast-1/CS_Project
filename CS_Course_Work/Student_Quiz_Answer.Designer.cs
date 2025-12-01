@@ -38,6 +38,7 @@
             this.But_Option_F = new System.Windows.Forms.Button();
             this.But_Option_E = new System.Windows.Forms.Button();
             this.But_Option_D = new System.Windows.Forms.Button();
+            this.But_Submit_Quiz = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // T_Question
@@ -59,6 +60,7 @@
             this.But_Right_Pan.TabIndex = 15;
             this.But_Right_Pan.Text = "R";
             this.But_Right_Pan.UseVisualStyleBackColor = true;
+            this.But_Right_Pan.Click += new System.EventHandler(this.But_Right_Pan_Click);
             // 
             // But_Left_Pan
             // 
@@ -69,6 +71,7 @@
             this.But_Left_Pan.TabIndex = 16;
             this.But_Left_Pan.Text = "L";
             this.But_Left_Pan.UseVisualStyleBackColor = true;
+            this.But_Left_Pan.Click += new System.EventHandler(this.But_Left_Pan_Click);
             // 
             // richTextBox6
             // 
@@ -87,7 +90,7 @@
             this.But_Option_A.TabIndex = 18;
             this.But_Option_A.Text = "A";
             this.But_Option_A.UseVisualStyleBackColor = true;
-            this.But_Option_A.Click += new System.EventHandler(this.But_Option_A_Click);
+            this.But_Option_A.Visible = false;
             // 
             // But_Option_B
             // 
@@ -97,6 +100,7 @@
             this.But_Option_B.TabIndex = 19;
             this.But_Option_B.Text = "B";
             this.But_Option_B.UseVisualStyleBackColor = true;
+            this.But_Option_B.Visible = false;
             // 
             // But_Option_C
             // 
@@ -106,6 +110,7 @@
             this.But_Option_C.TabIndex = 20;
             this.But_Option_C.Text = "C";
             this.But_Option_C.UseVisualStyleBackColor = true;
+            this.But_Option_C.Visible = false;
             // 
             // But_Option_F
             // 
@@ -115,6 +120,7 @@
             this.But_Option_F.TabIndex = 21;
             this.But_Option_F.Text = "F";
             this.But_Option_F.UseVisualStyleBackColor = true;
+            this.But_Option_F.Visible = false;
             // 
             // But_Option_E
             // 
@@ -124,6 +130,7 @@
             this.But_Option_E.TabIndex = 22;
             this.But_Option_E.Text = "E";
             this.But_Option_E.UseVisualStyleBackColor = true;
+            this.But_Option_E.Visible = false;
             // 
             // But_Option_D
             // 
@@ -133,12 +140,24 @@
             this.But_Option_D.TabIndex = 23;
             this.But_Option_D.Text = "D";
             this.But_Option_D.UseVisualStyleBackColor = true;
+            this.But_Option_D.Visible = false;
+            // 
+            // But_Submit_Quiz
+            // 
+            this.But_Submit_Quiz.Location = new System.Drawing.Point(317, 383);
+            this.But_Submit_Quiz.Name = "But_Submit_Quiz";
+            this.But_Submit_Quiz.Size = new System.Drawing.Size(217, 59);
+            this.But_Submit_Quiz.TabIndex = 24;
+            this.But_Submit_Quiz.Text = "Submit";
+            this.But_Submit_Quiz.UseVisualStyleBackColor = true;
+            this.But_Submit_Quiz.Click += new System.EventHandler(this.But_Submit_Quiz_Click);
             // 
             // F_Student_Quiz_Answer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.But_Submit_Quiz);
             this.Controls.Add(this.But_Option_D);
             this.Controls.Add(this.But_Option_E);
             this.Controls.Add(this.But_Option_F);
@@ -151,6 +170,7 @@
             this.Controls.Add(this.T_Question);
             this.Name = "F_Student_Quiz_Answer";
             this.Text = "Student Quiz";
+            this.Load += new System.EventHandler(this.F_Student_Quiz_Answer_Load);
             this.ResumeLayout(false);
 
         }
@@ -167,5 +187,6 @@
         private System.Windows.Forms.Button But_Option_F;
         private System.Windows.Forms.Button But_Option_E;
         private System.Windows.Forms.Button But_Option_D;
+        private System.Windows.Forms.Button But_Submit_Quiz;
     }
 }

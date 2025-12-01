@@ -1,6 +1,6 @@
 ﻿namespace CS_Course_Work
 {
-    partial class Result_Template
+    partial class F_Result_Template
     {
         /// <summary>
         /// Required designer variable.
@@ -40,52 +40,46 @@
             this.label5 = new System.Windows.Forms.Label();
             this.T_Time_Spent = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.But_Redo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // T_Correct_Questions
             // 
-            this.T_Correct_Questions.Location = new System.Drawing.Point(295, 160);
-            this.T_Correct_Questions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Correct_Questions.Location = new System.Drawing.Point(197, 104);
             this.T_Correct_Questions.Name = "T_Correct_Questions";
-            this.T_Correct_Questions.Size = new System.Drawing.Size(255, 36);
+            this.T_Correct_Questions.Size = new System.Drawing.Size(171, 25);
             this.T_Correct_Questions.TabIndex = 1;
             this.T_Correct_Questions.Text = "";
-            this.T_Correct_Questions.TextChanged += new System.EventHandler(this.T_Correct_Questions_TextChanged);
             // 
             // T_Incorrect_Questions
             // 
-            this.T_Incorrect_Questions.Location = new System.Drawing.Point(295, 215);
-            this.T_Incorrect_Questions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Incorrect_Questions.Location = new System.Drawing.Point(197, 140);
             this.T_Incorrect_Questions.Name = "T_Incorrect_Questions";
-            this.T_Incorrect_Questions.Size = new System.Drawing.Size(252, 36);
+            this.T_Incorrect_Questions.Size = new System.Drawing.Size(169, 25);
             this.T_Incorrect_Questions.TabIndex = 2;
             this.T_Incorrect_Questions.Text = "";
             // 
             // T_Score_Percentage
             // 
-            this.T_Score_Percentage.Location = new System.Drawing.Point(295, 258);
-            this.T_Score_Percentage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Score_Percentage.Location = new System.Drawing.Point(197, 168);
             this.T_Score_Percentage.Name = "T_Score_Percentage";
-            this.T_Score_Percentage.Size = new System.Drawing.Size(255, 220);
+            this.T_Score_Percentage.Size = new System.Drawing.Size(171, 144);
             this.T_Score_Percentage.TabIndex = 3;
             this.T_Score_Percentage.Text = "";
             // 
             // T_Completion_Rate
             // 
-            this.T_Completion_Rate.Location = new System.Drawing.Point(295, 57);
-            this.T_Completion_Rate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Completion_Rate.Location = new System.Drawing.Point(197, 37);
             this.T_Completion_Rate.Name = "T_Completion_Rate";
-            this.T_Completion_Rate.Size = new System.Drawing.Size(255, 36);
+            this.T_Completion_Rate.Size = new System.Drawing.Size(171, 25);
             this.T_Completion_Rate.TabIndex = 4;
             this.T_Completion_Rate.Text = "";
             // 
             // T_Version_Number
             // 
-            this.T_Version_Number.Location = new System.Drawing.Point(295, 102);
-            this.T_Version_Number.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Version_Number.Location = new System.Drawing.Point(197, 66);
             this.T_Version_Number.Name = "T_Version_Number";
-            this.T_Version_Number.Size = new System.Drawing.Size(52, 37);
+            this.T_Version_Number.Size = new System.Drawing.Size(36, 25);
             this.T_Version_Number.TabIndex = 5;
             this.T_Version_Number.Text = "";
             // 
@@ -93,10 +87,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(153, 103);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(102, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 36);
+            this.label1.Size = new System.Drawing.Size(90, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Version :";
             // 
@@ -104,10 +97,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.Location = new System.Drawing.Point(13, 160);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 36);
+            this.label2.Size = new System.Drawing.Size(181, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Correct Questions :";
             // 
@@ -115,10 +107,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.Location = new System.Drawing.Point(-6, 205);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(-4, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 36);
+            this.label3.Size = new System.Drawing.Size(192, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Incorrect Questions :";
             // 
@@ -126,10 +117,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.Location = new System.Drawing.Point(153, 258);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(102, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 36);
+            this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 9;
             this.label4.Text = "Score %";
             // 
@@ -137,19 +127,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.Location = new System.Drawing.Point(48, 57);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(32, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(239, 36);
+            this.label5.Size = new System.Drawing.Size(160, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "Completion rate :";
             // 
             // T_Time_Spent
             // 
-            this.T_Time_Spent.Location = new System.Drawing.Point(295, 11);
-            this.T_Time_Spent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.T_Time_Spent.Location = new System.Drawing.Point(197, 7);
             this.T_Time_Spent.Name = "T_Time_Spent";
-            this.T_Time_Spent.Size = new System.Drawing.Size(255, 36);
+            this.T_Time_Spent.Size = new System.Drawing.Size(171, 25);
             this.T_Time_Spent.TabIndex = 11;
             this.T_Time_Spent.Text = "";
             // 
@@ -157,29 +145,28 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label6.Location = new System.Drawing.Point(106, 9);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(71, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 36);
+            this.label6.Size = new System.Drawing.Size(124, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Time Spent :";
             // 
-            // button1
+            // But_Redo
             // 
-            this.button1.Location = new System.Drawing.Point(295, 488);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 89);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Redo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.But_Redo.Location = new System.Drawing.Point(197, 317);
+            this.But_Redo.Name = "But_Redo";
+            this.But_Redo.Size = new System.Drawing.Size(138, 58);
+            this.But_Redo.TabIndex = 13;
+            this.But_Redo.Text = "Redo";
+            this.But_Redo.UseVisualStyleBackColor = true;
+            this.But_Redo.Click += new System.EventHandler(this.But_Redo_Click);
             // 
-            // Result_Template
+            // F_Result_Template
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 634);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(408, 412);
+            this.Controls.Add(this.But_Redo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.T_Time_Spent);
             this.Controls.Add(this.label5);
@@ -192,9 +179,9 @@
             this.Controls.Add(this.T_Score_Percentage);
             this.Controls.Add(this.T_Incorrect_Questions);
             this.Controls.Add(this.T_Correct_Questions);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Result_Template";
+            this.Name = "F_Result_Template";
             this.Text = "Result_Template";
+            this.Load += new System.EventHandler(this.F_Result_Template_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +200,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox T_Time_Spent;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button But_Redo;
     }
 }
