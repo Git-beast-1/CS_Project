@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,10 @@ namespace CS_Course_Work
             Max_Index = Current_Questions.Count;
             Option_Buts = new List<Button>() { But_Option_A, But_Option_B, But_Option_C, But_Option_D, But_Option_E, But_Option_F };
             Current_Index = 0;
+            for(int i = 0; i < Max_Index; i++)
+            {
+                Student_Answers.Add(string.Empty);
+            }
 
             But_Option_A.Click += Detect_Selected_Answer;
             But_Option_B.Click += Detect_Selected_Answer;
@@ -41,7 +46,6 @@ namespace CS_Course_Work
         private void But_Right_Pan_Click(object sender, EventArgs e)
         {
             Current_Index++;
-         //   MessageBox.Show(Current_Index.ToString());
             if (Current_Index >= Max_Index)
             {
                 Current_Index = Max_Index-1;
@@ -55,8 +59,6 @@ namespace CS_Course_Work
         private void But_Left_Pan_Click(object sender, EventArgs e)
         {
             Current_Index--;
-
-          //  MessageBox.Show(Current_Index.ToString());
             if (Current_Index == -1) { 
                 Current_Index = 0;
             }
@@ -90,15 +92,15 @@ namespace CS_Course_Work
 
         private void But_Submit_Quiz_Click(object sender, EventArgs e)
         {
+            F_Result_Template result_Template = new F_Result_Template();
             for(int i = 0; i < Student_Answers.Count; i++)
             {
-                F_Result_Template Result_Template = new F_Result_Template();
-                Result_Template.All_Chosen_Answers.Add(Student_Answers[i]);
+                result_Template.All_Chosen_Answers.Add(Student_Answers[i]);
+                result_Template.Compare_with_Questions.Add(Current_Questions[i]);
 
                 MessageBox.Show(Student_Answers[i]);
             }
 
-            F_Result_Template result_Template = new F_Result_Template();
             result_Template.Show();
             this.Hide();
         }
@@ -106,7 +108,7 @@ namespace CS_Course_Work
         public void Detect_Selected_Answer(object sender, EventArgs e)
         {
             Button Selected = sender as Button;
-            Student_Answers.Add(Selected.Text);
+            Student_Answers[Current_Index] = Selected.Text;
         }
     }
 }
