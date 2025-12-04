@@ -37,11 +37,6 @@
             this.L_Links = new System.Windows.Forms.Label();
             this.L_Retry = new System.Windows.Forms.Label();
             this.But_Retry_Enabled = new System.Windows.Forms.Button();
-            this.L_Storage_Time = new System.Windows.Forms.Label();
-            this.T_Storage_Time = new System.Windows.Forms.RichTextBox();
-            this.But_Timer_Enabled = new System.Windows.Forms.Button();
-            this.L_Timer = new System.Windows.Forms.Label();
-            this.T_Timer_Seconds = new System.Windows.Forms.RichTextBox();
             this.But_Create_Quiz = new System.Windows.Forms.Button();
             this.Combo_Student_Accounts = new System.Windows.Forms.ComboBox();
             this.T_Version_Number = new System.Windows.Forms.RichTextBox();
@@ -83,7 +78,7 @@
             // 
             // T_Due_Date
             // 
-            this.T_Due_Date.Location = new System.Drawing.Point(133, 86);
+            this.T_Due_Date.Location = new System.Drawing.Point(137, 88);
             this.T_Due_Date.Name = "T_Due_Date";
             this.T_Due_Date.Size = new System.Drawing.Size(275, 16);
             this.T_Due_Date.TabIndex = 4;
@@ -102,7 +97,7 @@
             // Combo_Links
             // 
             this.Combo_Links.FormattingEnabled = true;
-            this.Combo_Links.Location = new System.Drawing.Point(133, 108);
+            this.Combo_Links.Location = new System.Drawing.Point(133, 110);
             this.Combo_Links.Name = "Combo_Links";
             this.Combo_Links.Size = new System.Drawing.Size(275, 21);
             this.Combo_Links.TabIndex = 6;
@@ -135,52 +130,7 @@
             this.But_Retry_Enabled.TabIndex = 9;
             this.But_Retry_Enabled.Text = "F";
             this.But_Retry_Enabled.UseVisualStyleBackColor = true;
-            // 
-            // L_Storage_Time
-            // 
-            this.L_Storage_Time.AutoSize = true;
-            this.L_Storage_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Storage_Time.Location = new System.Drawing.Point(30, 168);
-            this.L_Storage_Time.Name = "L_Storage_Time";
-            this.L_Storage_Time.Size = new System.Drawing.Size(97, 17);
-            this.L_Storage_Time.TabIndex = 10;
-            this.L_Storage_Time.Text = "Storage Time:";
-            // 
-            // T_Storage_Time
-            // 
-            this.T_Storage_Time.Location = new System.Drawing.Point(133, 170);
-            this.T_Storage_Time.Name = "T_Storage_Time";
-            this.T_Storage_Time.Size = new System.Drawing.Size(140, 16);
-            this.T_Storage_Time.TabIndex = 11;
-            this.T_Storage_Time.Text = "";
-            // 
-            // But_Timer_Enabled
-            // 
-            this.But_Timer_Enabled.Location = new System.Drawing.Point(133, 189);
-            this.But_Timer_Enabled.Name = "But_Timer_Enabled";
-            this.But_Timer_Enabled.Size = new System.Drawing.Size(27, 23);
-            this.But_Timer_Enabled.TabIndex = 13;
-            this.But_Timer_Enabled.Text = "F";
-            this.But_Timer_Enabled.UseVisualStyleBackColor = true;
-            // 
-            // L_Timer
-            // 
-            this.L_Timer.AutoSize = true;
-            this.L_Timer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Timer.Location = new System.Drawing.Point(79, 192);
-            this.L_Timer.Name = "L_Timer";
-            this.L_Timer.Size = new System.Drawing.Size(48, 17);
-            this.L_Timer.TabIndex = 12;
-            this.L_Timer.Text = "Timer:";
-            // 
-            // T_Timer_Seconds
-            // 
-            this.T_Timer_Seconds.Enabled = false;
-            this.T_Timer_Seconds.Location = new System.Drawing.Point(133, 218);
-            this.T_Timer_Seconds.Name = "T_Timer_Seconds";
-            this.T_Timer_Seconds.Size = new System.Drawing.Size(140, 16);
-            this.T_Timer_Seconds.TabIndex = 14;
-            this.T_Timer_Seconds.Text = "";
+            this.But_Retry_Enabled.Click += new System.EventHandler(this.But_Retry_Enabled_Click);
             // 
             // But_Create_Quiz
             // 
@@ -285,11 +235,6 @@
             this.Controls.Add(this.T_Version_Number);
             this.Controls.Add(this.Combo_Student_Accounts);
             this.Controls.Add(this.But_Create_Quiz);
-            this.Controls.Add(this.T_Timer_Seconds);
-            this.Controls.Add(this.But_Timer_Enabled);
-            this.Controls.Add(this.L_Timer);
-            this.Controls.Add(this.T_Storage_Time);
-            this.Controls.Add(this.L_Storage_Time);
             this.Controls.Add(this.But_Retry_Enabled);
             this.Controls.Add(this.L_Retry);
             this.Controls.Add(this.L_Links);
@@ -318,11 +263,6 @@
         private System.Windows.Forms.Label L_Links;
         private System.Windows.Forms.Label L_Retry;
         private System.Windows.Forms.Button But_Retry_Enabled;
-        private System.Windows.Forms.Label L_Storage_Time;
-        private System.Windows.Forms.RichTextBox T_Storage_Time;
-        private System.Windows.Forms.Button But_Timer_Enabled;
-        private System.Windows.Forms.Label L_Timer;
-        private System.Windows.Forms.RichTextBox T_Timer_Seconds;
         private System.Windows.Forms.Button But_Create_Quiz;
         private System.Windows.Forms.ComboBox Combo_Student_Accounts;
         private System.Windows.Forms.RichTextBox T_Version_Number;

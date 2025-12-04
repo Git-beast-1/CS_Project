@@ -16,12 +16,18 @@ namespace CS_Course_Work
 {
     public partial class F_Quiz_Info : Form // 
     {
+        public class Additional_Quiz_Information_Record
+        {
+            public string All_Links;
+            public string Retry;
+        }
+        public Additional_Quiz_Information_Record More_Info = new Additional_Quiz_Information_Record();
         public static Dictionary<string, string> Student_And_Student_ID = new Dictionary<string, string>();
-
+        public bool Is_Redoable;
         public string ID_Location;
         public List<F_Question_Template.Question_Setup> All_Questions = new List<F_Question_Template.Question_Setup> ();
 
-    public string User_ID;
+        public string User_ID;
         public class Student_Quiz_Info {
             public string Quiz_Name;
             public string Teacher_ID;
@@ -35,10 +41,11 @@ namespace CS_Course_Work
 
         private void But_Create_Quiz_Click_1(object sender, EventArgs e)
         {
-            Write_To_Database();// Store Quiz to data base
+            Write_To_Database(ID_Location,T_Quiz_Name.Text, All_Questions);// Store Quiz to data base
             Student_ID_Access();// Access All student IDs via dictionary
             Send_Quiz_Data_To_Student_Database();// sends Teachers ID and quiz name to student Ids
                                                 //hence, when student logs in, the quiz is retrieved from teachers ID with the right quiz name 
+            Additional_Quiz_Information();
         }
 
 
@@ -79,13 +86,13 @@ namespace CS_Course_Work
         {
 
         }
-        public void Write_To_Database()
+        public void Write_To_Database(string Teacher_ID, string Quiz_Name_Location, object Data_to_Be_Read)
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+ID_Location+"/" +T_Quiz_Name.Text+".json"; 
+            string Location = "Central_Quiz/"+Teacher_ID+"/" +Quiz_Name_Location+".json"; 
 
             string Link = Database_URL + Location;
-            string Data_As_Json=JsonConvert.SerializeObject(All_Questions);
+            string Data_As_Json=JsonConvert.SerializeObject(Data_to_Be_Read);
             var Json_Wrapped= new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
 
             var Sender_client = new HttpClient();
@@ -137,7 +144,7 @@ namespace CS_Course_Work
         }
         private void But_Bug_Tester_Click(object sender, EventArgs e)
         {
-
+            Additional_Quiz_Information();
         }
 
         private void But_Add_Student_Account_Click(object sender, EventArgs e)
@@ -167,6 +174,32 @@ namespace CS_Course_Work
         private void F_Quiz_Info_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void Additional_Quiz_Information()
+        {
+            List<string> Collect_Links = new List<string>();
+            for (int i = 0; i < Combo_Links.Items.Count; i++) 
+            {
+                Collect_Links.Add(Combo_Links.Items[i].ToString());
+            }
+            More_Info.All_Links = string.Join(",", Collect_Links);
+            More_Info.Retry = Is_Redoable.ToString();
+
+            Write_To_Database(ID_Location,$"{T_Quiz_Name.Text}_Additional_Information",More_Info);
+        }
+
+        private void But_Retry_Enabled_Click(object sender, EventArgs e)
+        {
+            Is_Redoable = !Is_Redoable;
+
+            if (Is_Redoable == true) {
+                But_Retry_Enabled.Text = "T";
+            }
+            else
+            {
+                But_Retry_Enabled.Text = "F";
+            }
         }
     }
 }
