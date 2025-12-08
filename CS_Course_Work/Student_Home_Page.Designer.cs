@@ -51,7 +51,7 @@
             // 
             // But_Tester
             // 
-            this.But_Tester.Location = new System.Drawing.Point(67, 343);
+            this.But_Tester.Location = new System.Drawing.Point(639, 141);
             this.But_Tester.Margin = new System.Windows.Forms.Padding(2);
             this.But_Tester.Name = "But_Tester";
             this.But_Tester.Size = new System.Drawing.Size(118, 58);

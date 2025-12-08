@@ -123,6 +123,8 @@ namespace CS_Course_Work
                 {
                     Student_Quiz_Form.Current_Questions.Add(Available_Question[i]);
                 }
+                Student_Quiz_Form.Quiz_Name= Quiz_Name;
+                Student_Quiz_Form.Teacher_ID = Teacher_ID;
                 Student_Quiz_Form.Show();
                 this.Hide();
             }

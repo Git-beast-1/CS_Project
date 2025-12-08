@@ -31,8 +31,6 @@
             this.T_Quiz_Name = new System.Windows.Forms.RichTextBox();
             this.L_Quiz_Name = new System.Windows.Forms.Label();
             this.L_Student_Account = new System.Windows.Forms.Label();
-            this.T_Due_Date = new System.Windows.Forms.RichTextBox();
-            this.L_Due_Date = new System.Windows.Forms.Label();
             this.Combo_Links = new System.Windows.Forms.ComboBox();
             this.L_Links = new System.Windows.Forms.Label();
             this.L_Retry = new System.Windows.Forms.Label();
@@ -76,28 +74,10 @@
             this.L_Student_Account.TabIndex = 3;
             this.L_Student_Account.Text = "Student Name:";
             // 
-            // T_Due_Date
-            // 
-            this.T_Due_Date.Location = new System.Drawing.Point(137, 88);
-            this.T_Due_Date.Name = "T_Due_Date";
-            this.T_Due_Date.Size = new System.Drawing.Size(275, 16);
-            this.T_Due_Date.TabIndex = 4;
-            this.T_Due_Date.Text = "";
-            // 
-            // L_Due_Date
-            // 
-            this.L_Due_Date.AutoSize = true;
-            this.L_Due_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Due_Date.Location = new System.Drawing.Point(59, 87);
-            this.L_Due_Date.Name = "L_Due_Date";
-            this.L_Due_Date.Size = new System.Drawing.Size(72, 17);
-            this.L_Due_Date.TabIndex = 5;
-            this.L_Due_Date.Text = "Due Date:";
-            // 
             // Combo_Links
             // 
             this.Combo_Links.FormattingEnabled = true;
-            this.Combo_Links.Location = new System.Drawing.Point(133, 110);
+            this.Combo_Links.Location = new System.Drawing.Point(133, 90);
             this.Combo_Links.Name = "Combo_Links";
             this.Combo_Links.Size = new System.Drawing.Size(275, 21);
             this.Combo_Links.TabIndex = 6;
@@ -106,7 +86,7 @@
             // 
             this.L_Links.AutoSize = true;
             this.L_Links.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Links.Location = new System.Drawing.Point(86, 112);
+            this.L_Links.Location = new System.Drawing.Point(86, 92);
             this.L_Links.Name = "L_Links";
             this.L_Links.Size = new System.Drawing.Size(45, 17);
             this.L_Links.TabIndex = 7;
@@ -116,7 +96,7 @@
             // 
             this.L_Retry.AutoSize = true;
             this.L_Retry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.L_Retry.Location = new System.Drawing.Point(81, 146);
+            this.L_Retry.Location = new System.Drawing.Point(81, 122);
             this.L_Retry.Name = "L_Retry";
             this.L_Retry.Size = new System.Drawing.Size(46, 17);
             this.L_Retry.TabIndex = 8;
@@ -124,7 +104,7 @@
             // 
             // But_Retry_Enabled
             // 
-            this.But_Retry_Enabled.Location = new System.Drawing.Point(133, 140);
+            this.But_Retry_Enabled.Location = new System.Drawing.Point(133, 116);
             this.But_Retry_Enabled.Name = "But_Retry_Enabled";
             this.But_Retry_Enabled.Size = new System.Drawing.Size(27, 23);
             this.But_Retry_Enabled.TabIndex = 9;
@@ -135,7 +115,7 @@
             // But_Create_Quiz
             // 
             this.But_Create_Quiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.But_Create_Quiz.Location = new System.Drawing.Point(133, 240);
+            this.But_Create_Quiz.Location = new System.Drawing.Point(133, 145);
             this.But_Create_Quiz.Name = "But_Create_Quiz";
             this.But_Create_Quiz.Size = new System.Drawing.Size(140, 45);
             this.But_Create_Quiz.TabIndex = 15;
@@ -182,7 +162,7 @@
             // 
             // But_Add_Links
             // 
-            this.But_Add_Links.Location = new System.Drawing.Point(414, 112);
+            this.But_Add_Links.Location = new System.Drawing.Point(414, 92);
             this.But_Add_Links.Name = "But_Add_Links";
             this.But_Add_Links.Size = new System.Drawing.Size(27, 23);
             this.But_Add_Links.TabIndex = 20;
@@ -193,7 +173,7 @@
             // But_Bug_Tester
             // 
             this.But_Bug_Tester.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.But_Bug_Tester.Location = new System.Drawing.Point(313, 218);
+            this.But_Bug_Tester.Location = new System.Drawing.Point(313, 156);
             this.But_Bug_Tester.Name = "But_Bug_Tester";
             this.But_Bug_Tester.Size = new System.Drawing.Size(119, 34);
             this.But_Bug_Tester.TabIndex = 21;
@@ -213,7 +193,7 @@
             // 
             // But_Remove_Links
             // 
-            this.But_Remove_Links.Location = new System.Drawing.Point(447, 112);
+            this.But_Remove_Links.Location = new System.Drawing.Point(447, 92);
             this.But_Remove_Links.Name = "But_Remove_Links";
             this.But_Remove_Links.Size = new System.Drawing.Size(27, 23);
             this.But_Remove_Links.TabIndex = 23;
@@ -225,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 316);
+            this.ClientSize = new System.Drawing.Size(476, 221);
             this.Controls.Add(this.But_Remove_Links);
             this.Controls.Add(this.But_Remove_Student_Account);
             this.Controls.Add(this.But_Bug_Tester);
@@ -239,8 +219,6 @@
             this.Controls.Add(this.L_Retry);
             this.Controls.Add(this.L_Links);
             this.Controls.Add(this.Combo_Links);
-            this.Controls.Add(this.L_Due_Date);
-            this.Controls.Add(this.T_Due_Date);
             this.Controls.Add(this.L_Student_Account);
             this.Controls.Add(this.L_Quiz_Name);
             this.Controls.Add(this.T_Quiz_Name);
@@ -257,8 +235,6 @@
         private System.Windows.Forms.RichTextBox T_Quiz_Name;
         private System.Windows.Forms.Label L_Quiz_Name;
         private System.Windows.Forms.Label L_Student_Account;
-        private System.Windows.Forms.RichTextBox T_Due_Date;
-        private System.Windows.Forms.Label L_Due_Date;
         private System.Windows.Forms.ComboBox Combo_Links;
         private System.Windows.Forms.Label L_Links;
         private System.Windows.Forms.Label L_Retry;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,9 +8,11 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CS_Course_Work.F_Student_Home_Page;
 
 namespace CS_Course_Work
 {
@@ -18,6 +22,14 @@ namespace CS_Course_Work
         public int Max_Index,Current_Index;
         public List<string> Student_Answers = new List<string>();
         public List<Button> Option_Buts;
+        public string Quiz_Name,Teacher_ID;
+        public class Additional_Quiz_Information_Record
+        {
+            public string All_Links;
+            public string Retry;
+        }
+
+        public Additional_Quiz_Information_Record Retrieved_Additional_Information;
         public F_Student_Quiz_Answer()
         {
             InitializeComponent();
@@ -41,6 +53,7 @@ namespace CS_Course_Work
             But_Option_F.Click += Detect_Selected_Answer;
 
             Preview_Questions();
+            Load_Links();
         }
 
         private void But_Right_Pan_Click(object sender, EventArgs e)
@@ -69,6 +82,30 @@ namespace CS_Course_Work
             }
         }
 
+        public void Load_Links()
+        {
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "Central_Quiz/"+Teacher_ID+"/"+Quiz_Name+ "_Additional_Information.json";
+            string Link = Database_URL + Location;
+            var Connect_to_Firebase = new RestClient(Link);
+            var Get_Request_for_Data = new RestRequest(Link, Method.Get);
+            RestResponse Responsed_Data = Connect_to_Firebase.Execute(Get_Request_for_Data);
+
+            if (Responsed_Data.IsSuccessStatusCode)
+            {
+               var data = JsonConvert.DeserializeObject(Responsed_Data.Content);
+                List<string> splitted = new List<string>(data.ToString().Split('\n'));
+
+                for(int i = 0; i < splitted.Count; i++)
+                {
+                    MessageBox.Show(splitted[i]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
         public void Clear_Questions()
         {
             for(int i = 0;i < Option_Buts.Count; i++)

@@ -86,28 +86,7 @@ namespace CS_Course_Work
         {
 
         }
-        public void Write_To_Database(string Teacher_ID, string Quiz_Name_Location, object Data_to_Be_Read)
-        {
-            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+Teacher_ID+"/" +Quiz_Name_Location+".json"; 
 
-            string Link = Database_URL + Location;
-            string Data_As_Json=JsonConvert.SerializeObject(Data_to_Be_Read);
-            var Json_Wrapped= new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
-
-            var Sender_client = new HttpClient();
-            var To_Database = Sender_client.PutAsync(Link, Json_Wrapped).Result;
-
-            if (To_Database.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Write was successful!!");
-            }
-            else
-            {
-                string errorDetails = To_Database.Content.ReadAsStringAsync().Result;
-                MessageBox.Show(errorDetails);
-            }
-        }
 
         public void Send_Quiz_Data_To_Student_Database()
         {
@@ -188,7 +167,28 @@ namespace CS_Course_Work
 
             Write_To_Database(ID_Location,$"{T_Quiz_Name.Text}_Additional_Information",More_Info);
         }
+        public void Write_To_Database(string Teacher_ID, string Quiz_Name_Location, object Data_to_Be_Read)
+        {
+            string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
+            string Location = "Central_Quiz/"+Teacher_ID+"/" +Quiz_Name_Location+".json"; 
 
+            string Link = Database_URL + Location;
+            string Data_As_Json=JsonConvert.SerializeObject(Data_to_Be_Read);
+            var Json_Wrapped= new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
+
+            var Sender_client = new HttpClient();
+            var To_Database = Sender_client.PutAsync(Link, Json_Wrapped).Result;
+
+            if (To_Database.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Write was successful!!");
+            }
+            else
+            {
+                string errorDetails = To_Database.Content.ReadAsStringAsync().Result;
+                MessageBox.Show(errorDetails);
+            }
+        }
         private void But_Retry_Enabled_Click(object sender, EventArgs e)
         {
             Is_Redoable = !Is_Redoable;

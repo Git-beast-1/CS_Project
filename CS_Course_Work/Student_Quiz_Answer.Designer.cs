@@ -31,7 +31,6 @@
             this.T_Question = new System.Windows.Forms.RichTextBox();
             this.But_Right_Pan = new System.Windows.Forms.Button();
             this.But_Left_Pan = new System.Windows.Forms.Button();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.But_Option_A = new System.Windows.Forms.Button();
             this.But_Option_B = new System.Windows.Forms.Button();
             this.But_Option_C = new System.Windows.Forms.Button();
@@ -39,6 +38,9 @@
             this.But_Option_E = new System.Windows.Forms.Button();
             this.But_Option_D = new System.Windows.Forms.Button();
             this.But_Submit_Quiz = new System.Windows.Forms.Button();
+            this.Combo_Links = new System.Windows.Forms.ComboBox();
+            this.But_Open_Links = new System.Windows.Forms.Button();
+            this.Link_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // T_Question
@@ -72,15 +74,6 @@
             this.But_Left_Pan.Text = "L";
             this.But_Left_Pan.UseVisualStyleBackColor = true;
             this.But_Left_Pan.Click += new System.EventHandler(this.But_Left_Pan_Click);
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.Location = new System.Drawing.Point(488, 11);
-            this.richTextBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(170, 28);
-            this.richTextBox6.TabIndex = 17;
-            this.richTextBox6.Text = "TIMER";
             // 
             // But_Option_A
             // 
@@ -152,11 +145,40 @@
             this.But_Submit_Quiz.UseVisualStyleBackColor = true;
             this.But_Submit_Quiz.Click += new System.EventHandler(this.But_Submit_Quiz_Click);
             // 
+            // Combo_Links
+            // 
+            this.Combo_Links.FormattingEnabled = true;
+            this.Combo_Links.Location = new System.Drawing.Point(505, 12);
+            this.Combo_Links.Name = "Combo_Links";
+            this.Combo_Links.Size = new System.Drawing.Size(276, 21);
+            this.Combo_Links.TabIndex = 25;
+            // 
+            // But_Open_Links
+            // 
+            this.But_Open_Links.Location = new System.Drawing.Point(798, 12);
+            this.But_Open_Links.Name = "But_Open_Links";
+            this.But_Open_Links.Size = new System.Drawing.Size(41, 23);
+            this.But_Open_Links.TabIndex = 26;
+            this.But_Open_Links.Text = "A";
+            this.But_Open_Links.UseVisualStyleBackColor = true;
+            // 
+            // Link_Label
+            // 
+            this.Link_Label.AutoSize = true;
+            this.Link_Label.Location = new System.Drawing.Point(458, 17);
+            this.Link_Label.Name = "Link_Label";
+            this.Link_Label.Size = new System.Drawing.Size(41, 13);
+            this.Link_Label.TabIndex = 27;
+            this.Link_Label.Text = "Links : ";
+            // 
             // F_Student_Quiz_Answer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 450);
+            this.Controls.Add(this.Link_Label);
+            this.Controls.Add(this.But_Open_Links);
+            this.Controls.Add(this.Combo_Links);
             this.Controls.Add(this.But_Submit_Quiz);
             this.Controls.Add(this.But_Option_D);
             this.Controls.Add(this.But_Option_E);
@@ -164,7 +186,6 @@
             this.Controls.Add(this.But_Option_C);
             this.Controls.Add(this.But_Option_B);
             this.Controls.Add(this.But_Option_A);
-            this.Controls.Add(this.richTextBox6);
             this.Controls.Add(this.But_Left_Pan);
             this.Controls.Add(this.But_Right_Pan);
             this.Controls.Add(this.T_Question);
@@ -172,6 +193,7 @@
             this.Text = "Student Quiz";
             this.Load += new System.EventHandler(this.F_Student_Quiz_Answer_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,7 +202,6 @@
         private System.Windows.Forms.RichTextBox T_Question;
         private System.Windows.Forms.Button But_Right_Pan;
         private System.Windows.Forms.Button But_Left_Pan;
-        private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.Button But_Option_A;
         private System.Windows.Forms.Button But_Option_B;
         private System.Windows.Forms.Button But_Option_C;
@@ -188,5 +209,8 @@
         private System.Windows.Forms.Button But_Option_E;
         private System.Windows.Forms.Button But_Option_D;
         private System.Windows.Forms.Button But_Submit_Quiz;
+        private System.Windows.Forms.ComboBox Combo_Links;
+        private System.Windows.Forms.Button But_Open_Links;
+        private System.Windows.Forms.Label Link_Label;
     }
 }
