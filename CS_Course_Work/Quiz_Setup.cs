@@ -121,10 +121,6 @@ namespace CS_Course_Work
             MessageBox.Show("Quiz sent to all listed students!!!");
 
         }
-        private void But_Bug_Tester_Click(object sender, EventArgs e)
-        {
-            Additional_Quiz_Information();
-        }
 
         private void But_Add_Student_Account_Click(object sender, EventArgs e)
         {

@@ -179,7 +179,6 @@
             this.But_Bug_Tester.TabIndex = 21;
             this.But_Bug_Tester.Text = "Bug Tester";
             this.But_Bug_Tester.UseVisualStyleBackColor = true;
-            this.But_Bug_Tester.Click += new System.EventHandler(this.But_Bug_Tester_Click);
             // 
             // But_Remove_Student_Account
             // 
