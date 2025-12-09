@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -25,8 +26,8 @@ namespace CS_Course_Work
         public string Quiz_Name,Teacher_ID;
         public class Additional_Quiz_Information_Record
         {
-            public string All_Links;
-            public string Retry;
+            public string All_Links {  get; set; }
+            public string Retry {  get; set; }
         }
 
         public Additional_Quiz_Information_Record Retrieved_Additional_Information;
@@ -93,12 +94,12 @@ namespace CS_Course_Work
 
             if (Responsed_Data.IsSuccessStatusCode)
             {
-               var data = JsonConvert.DeserializeObject(Responsed_Data.Content);
-                List<string> splitted = new List<string>(data.ToString().Split('\n'));
-
-                for(int i = 0; i < splitted.Count; i++)
+               Additional_Quiz_Information_Record data = JsonConvert.DeserializeObject<Additional_Quiz_Information_Record>(Responsed_Data.Content);
+                List<string> splitted = new List<string>();
+                splitted.AddRange(data.All_Links.Split(','));
+                for (int i = 0;i < splitted.Count; i++)
                 {
-                    MessageBox.Show(splitted[i]);
+                    Combo_Links.Items.Add(splitted[i]);
                 }
             }
             else
@@ -125,6 +126,15 @@ namespace CS_Course_Work
                 Option_Buts[i].Text = List_To_String[i];
             }
 
+        }
+
+        private void But_Open_Links_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+                {
+                FileName = Combo_Links.Text,
+                UseShellExecute = true
+            });
         }
 
         private void But_Submit_Quiz_Click(object sender, EventArgs e)

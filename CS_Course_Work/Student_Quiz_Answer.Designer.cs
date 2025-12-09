@@ -161,6 +161,7 @@
             this.But_Open_Links.TabIndex = 26;
             this.But_Open_Links.Text = "A";
             this.But_Open_Links.UseVisualStyleBackColor = true;
+            this.But_Open_Links.Click += new System.EventHandler(this.But_Open_Links_Click);
             // 
             // Link_Label
             // 
