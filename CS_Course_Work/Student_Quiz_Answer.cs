@@ -147,7 +147,8 @@ namespace CS_Course_Work
 
                 MessageBox.Show(Student_Answers[i]);
             }
-
+            result_Template.Quiz_Name = Quiz_Name;
+            result_Template.Teacher_ID = Teacher_ID;
             result_Template.Show();
             this.Hide();
         }

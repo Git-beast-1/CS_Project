@@ -171,7 +171,6 @@
             this.But_Tester.TabIndex = 16;
             this.But_Tester.Text = "Bug_Tester";
             this.But_Tester.UseVisualStyleBackColor = true;
-            this.But_Tester.Click += new System.EventHandler(this.But_Tester_Click);
             // 
             // But_Update
             // 

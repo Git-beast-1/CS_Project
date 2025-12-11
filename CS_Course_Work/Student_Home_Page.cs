@@ -14,7 +14,7 @@ namespace CS_Course_Work
 {
     public partial class F_Student_Home_Page : Form //NEXT UP: Read Quiz Data using the read student Quiz info Data 
     {
-        public class Retrieved_Question_Set_UP// this class stores a list of different kind of data needed for the full questions
+        public class Retrieved_Question_Set_UP//*RECORD STRUCTURES*
         {
             public string Options { get; set; }
             public string Question {  get; set; }
@@ -90,13 +90,13 @@ namespace CS_Course_Work
                 if (quizStrings[i] == Combo_Quiz_Name.Text)
                 {
                     int j = i + 1;
-                   Read_Quiz_From_Teacher_Database(quizStrings[j], quizStrings[i]);
+                   Read_Quiz_From_Teacher_Database(quizStrings[j], quizStrings[i]);// *PARAMETER PASSING TO FUNCTION*
                     break;
                 }
             }
         }
 
-        public void Read_Quiz_From_Teacher_Database(string Teacher_ID, string Quiz_Name)
+        public void Read_Quiz_From_Teacher_Database(string Teacher_ID, string Quiz_Name)// *PARAMETER PASSING TO FUNCTION*
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
             string Location = "Central_Quiz/"+Teacher_ID+"/"+Quiz_Name+".json";

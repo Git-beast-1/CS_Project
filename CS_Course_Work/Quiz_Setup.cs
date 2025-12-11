@@ -161,9 +161,9 @@ namespace CS_Course_Work
             More_Info.All_Links = string.Join(",", Collect_Links);
             More_Info.Retry = Is_Redoable.ToString();
 
-            Write_To_Database(ID_Location,$"{T_Quiz_Name.Text}_Additional_Information",More_Info);
+            Write_To_Database(ID_Location,$"{T_Quiz_Name.Text}_Additional_Information",More_Info);//*RECURSION when called in the load function*
         }
-        public void Write_To_Database(string Teacher_ID, string Quiz_Name_Location, object Data_to_Be_Read)
+        public void Write_To_Database(string Teacher_ID, string Quiz_Name_Location, object Data_to_Be_Read)//*PARAMETER PASSING TO FUNCTIONS* 
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
             string Location = "Central_Quiz/"+Teacher_ID+"/" +Quiz_Name_Location+".json"; 

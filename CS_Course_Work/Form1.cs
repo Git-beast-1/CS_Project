@@ -174,7 +174,7 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
 
         private void But_Left_Pan_Click(object sender, EventArgs e)
         {
-            try
+            try   // *EXCEPTION HANDLING ROUTINES*
             {
                 Reset_Question();
                 Q_index -= 1;
@@ -215,13 +215,8 @@ namespace CS_Course_Work // BUGS : if a user goes back to the preceeding questio
         private void But_Update_Click(object sender, EventArgs e)
         {
             Is_Update_Click = true;
-            But_New_Question_Click(sender, e);  // this is recursion that runs the new question function again but this time it updates the question by replacing it 
+            But_New_Question_Click(sender, e);  // *RECURSION*
             Is_Update_Click = false;
-        }
-
-        private void But_Tester_Click(object sender, EventArgs e)// a Debugging button
-        {
-
         }
     } 
 }

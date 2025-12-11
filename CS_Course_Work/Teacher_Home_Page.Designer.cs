@@ -33,7 +33,7 @@
             this.But_Add_Quiz = new System.Windows.Forms.Button();
             this.But_Remove_Quiz = new System.Windows.Forms.Button();
             this.But_Edit_Quiz = new System.Windows.Forms.Button();
-            this.But_List_Students = new System.Windows.Forms.Button();
+            this.But_Sort_Students = new System.Windows.Forms.Button();
             this.Combo_Quizzes = new System.Windows.Forms.ComboBox();
             this.T_Quiz_Details = new System.Windows.Forms.RichTextBox();
             this.T_Quiz_Detail_Name = new System.Windows.Forms.RichTextBox();
@@ -83,20 +83,20 @@
             this.But_Edit_Quiz.Text = "Edit Quiz";
             this.But_Edit_Quiz.UseVisualStyleBackColor = true;
             // 
-            // But_List_Students
+            // But_Sort_Students
             // 
-            this.But_List_Students.Location = new System.Drawing.Point(469, 385);
-            this.But_List_Students.Name = "But_List_Students";
-            this.But_List_Students.Size = new System.Drawing.Size(159, 56);
-            this.But_List_Students.TabIndex = 23;
-            this.But_List_Students.Text = "Students";
-            this.But_List_Students.UseVisualStyleBackColor = true;
+            this.But_Sort_Students.Location = new System.Drawing.Point(469, 385);
+            this.But_Sort_Students.Name = "But_Sort_Students";
+            this.But_Sort_Students.Size = new System.Drawing.Size(159, 56);
+            this.But_Sort_Students.TabIndex = 23;
+            this.But_Sort_Students.Text = "Sort Students";
+            this.But_Sort_Students.UseVisualStyleBackColor = true;
             // 
             // Combo_Quizzes
             // 
             this.Combo_Quizzes.FormattingEnabled = true;
             this.Combo_Quizzes.Location = new System.Drawing.Point(469, 16);
-            this.Combo_Quizzes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Combo_Quizzes.Margin = new System.Windows.Forms.Padding(2);
             this.Combo_Quizzes.Name = "Combo_Quizzes";
             this.Combo_Quizzes.Size = new System.Drawing.Size(324, 21);
             this.Combo_Quizzes.TabIndex = 24;
@@ -104,7 +104,7 @@
             // T_Quiz_Details
             // 
             this.T_Quiz_Details.Location = new System.Drawing.Point(136, 33);
-            this.T_Quiz_Details.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.T_Quiz_Details.Margin = new System.Windows.Forms.Padding(2);
             this.T_Quiz_Details.Name = "T_Quiz_Details";
             this.T_Quiz_Details.Size = new System.Drawing.Size(328, 299);
             this.T_Quiz_Details.TabIndex = 25;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.T_Quiz_Detail_Name);
             this.Controls.Add(this.T_Quiz_Details);
             this.Controls.Add(this.Combo_Quizzes);
-            this.Controls.Add(this.But_List_Students);
+            this.Controls.Add(this.But_Sort_Students);
             this.Controls.Add(this.But_Edit_Quiz);
             this.Controls.Add(this.But_Remove_Quiz);
             this.Controls.Add(this.But_Add_Quiz);
@@ -145,7 +145,7 @@
         private System.Windows.Forms.Button But_Add_Quiz;
         private System.Windows.Forms.Button But_Remove_Quiz;
         private System.Windows.Forms.Button But_Edit_Quiz;
-        private System.Windows.Forms.Button But_List_Students;
+        private System.Windows.Forms.Button But_Sort_Students;
         private System.Windows.Forms.ComboBox Combo_Quizzes;
         private System.Windows.Forms.RichTextBox T_Quiz_Details;
         private System.Windows.Forms.RichTextBox T_Quiz_Detail_Name;

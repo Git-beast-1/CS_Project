@@ -15,10 +15,10 @@ using static System.Net.WebRequestMethods;
 namespace CS_Course_Work
 {
     public partial class F_Sign_up : Form
-    {//NEXT UP: 
+    {
         string ID_Token, User_ID, T_Account_Type;
 
-        public class Built_In_Info
+        public class Built_In_Info // *RECORD STRUCTURE*
         {
             public string Name;
             public string Account_Type;
