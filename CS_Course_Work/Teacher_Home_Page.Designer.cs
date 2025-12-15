@@ -37,6 +37,9 @@
             this.Combo_Quizzes = new System.Windows.Forms.ComboBox();
             this.T_Quiz_Details = new System.Windows.Forms.RichTextBox();
             this.T_Quiz_Detail_Name = new System.Windows.Forms.RichTextBox();
+            this.Data_Grid = new System.Windows.Forms.DataGridView();
+            this.But_Bug_Tester = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // T_Teacher_Account
@@ -57,7 +60,7 @@
             // 
             // But_Add_Quiz
             // 
-            this.But_Add_Quiz.Location = new System.Drawing.Point(469, 324);
+            this.But_Add_Quiz.Location = new System.Drawing.Point(468, 323);
             this.But_Add_Quiz.Name = "But_Add_Quiz";
             this.But_Add_Quiz.Size = new System.Drawing.Size(159, 56);
             this.But_Add_Quiz.TabIndex = 20;
@@ -118,11 +121,31 @@
             this.T_Quiz_Detail_Name.TabIndex = 26;
             this.T_Quiz_Detail_Name.Text = "Quiz Details";
             // 
+            // Data_Grid
+            // 
+            this.Data_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Data_Grid.Location = new System.Drawing.Point(67, 263);
+            this.Data_Grid.Name = "Data_Grid";
+            this.Data_Grid.Size = new System.Drawing.Size(240, 150);
+            this.Data_Grid.TabIndex = 27;
+            // 
+            // But_Bug_Tester
+            // 
+            this.But_Bug_Tester.Location = new System.Drawing.Point(558, 169);
+            this.But_Bug_Tester.Name = "But_Bug_Tester";
+            this.But_Bug_Tester.Size = new System.Drawing.Size(159, 56);
+            this.But_Bug_Tester.TabIndex = 28;
+            this.But_Bug_Tester.Text = "Tester";
+            this.But_Bug_Tester.UseVisualStyleBackColor = true;
+            this.But_Bug_Tester.Click += new System.EventHandler(this.But_Bug_Tester_Click);
+            // 
             // F_Teacher_Home_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.But_Bug_Tester);
+            this.Controls.Add(this.Data_Grid);
             this.Controls.Add(this.T_Quiz_Detail_Name);
             this.Controls.Add(this.T_Quiz_Details);
             this.Controls.Add(this.Combo_Quizzes);
@@ -135,6 +158,7 @@
             this.Name = "F_Teacher_Home_Page";
             this.Text = "Teacher_Home_Page";
             this.Load += new System.EventHandler(this.F_Teacher_Home_Page_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Data_Grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,5 +173,7 @@
         private System.Windows.Forms.ComboBox Combo_Quizzes;
         private System.Windows.Forms.RichTextBox T_Quiz_Details;
         private System.Windows.Forms.RichTextBox T_Quiz_Detail_Name;
+        private System.Windows.Forms.DataGridView Data_Grid;
+        private System.Windows.Forms.Button But_Bug_Tester;
     }
 }

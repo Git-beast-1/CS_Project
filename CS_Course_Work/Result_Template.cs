@@ -17,17 +17,17 @@ namespace CS_Course_Work
     {
         public class Student_Results 
         {
+            public string Quiz_Name;
             public string Right_Answers;
             public string Wrong_Answers;
             public string Grade;
         }
-
         public Student_Results Results = new Student_Results();
 
         public List<string> All_Chosen_Answers = new List<string>();
         public List<F_Student_Home_Page.Retrieved_Question_Set_UP> Compare_with_Questions = new List<F_Student_Home_Page.Retrieved_Question_Set_UP>();
         public float Number_of_Right_answers, Number_of_wrong_Answers;
-        public string Teacher_ID,Quiz_Name;
+        public string Teacher_ID,Quiz_Name,Reference_Student_ID;
         public List<string> right_answers, wrong_answers;
         public F_Result_Template()
         {
@@ -41,12 +41,13 @@ namespace CS_Course_Work
             right_answers = new List<string>();
             wrong_answers = new List<string>();
 
+            Calculate_Quiz_Grade();
         }
 
         private void But_Submit_Quiz_Click(object sender, EventArgs e)
         {
             string Database_URL = "https://cs-dual-system-9ec28-default-rtdb.firebaseio.com/";
-            string Location = "Central_Quiz/"+Teacher_ID+"/"+Quiz_Name+"(Student_Results).json";
+            string Location = "Central_Quiz/"+Teacher_ID+"/Student_Results/" +Reference_Student_ID+".json";
             string Link = Database_URL + Location;
             string Data_As_Json = JsonConvert.SerializeObject(Results);
             var Json_Wrapped = new StringContent(Data_As_Json, Encoding.UTF8, "application/json");
@@ -67,7 +68,6 @@ namespace CS_Course_Work
 
         private void But_Redo_Click(object sender, EventArgs e)
         {            
-            Calculate_Quiz_Grade();
         }
 
         public void Calculate_Quiz_Grade()
@@ -100,6 +100,7 @@ namespace CS_Course_Work
             Results.Right_Answers = T_Correct_Questions.Text;
             Results.Wrong_Answers = T_Incorrect_Questions.Text;
             Results.Grade = T_Score_Percentage.Text;
+            Results.Quiz_Name = Quiz_Name;
         }
     }
 }

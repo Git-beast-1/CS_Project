@@ -125,6 +125,7 @@ namespace CS_Course_Work
                 }
                 Student_Quiz_Form.Quiz_Name= Quiz_Name;
                 Student_Quiz_Form.Teacher_ID = Teacher_ID;
+                Student_Quiz_Form.Student_ID = Student_ID;
                 Student_Quiz_Form.Show();
                 this.Hide();
             }
