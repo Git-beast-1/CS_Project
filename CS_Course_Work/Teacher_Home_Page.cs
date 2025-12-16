@@ -17,7 +17,8 @@ namespace CS_Course_Work
     public partial class F_Teacher_Home_Page : Form
     {
         public string Teacher_ID,Teacher_Name;
-        public List<F_Result_Template.Student_Results> Student_Results = new List<F_Result_Template.Student_Results> ();
+        public List<string> quizString = new List<string>();
+       public List<F_Result_Template.Student_Results> Student_Results = new List<F_Result_Template.Student_Results> ();
         public F_Teacher_Home_Page()
         {
             InitializeComponent();
@@ -43,21 +44,22 @@ namespace CS_Course_Work
 
             if (Responsed_Data.IsSuccessStatusCode)
             {
-                List<F_Result_Template.Student_Results> data = JsonConvert.DeserializeObject<List<F_Result_Template.Student_Results>>(Responsed_Data.Content);
+                var quizzes = JsonConvert.DeserializeObject<Dictionary<string,F_Result_Template.Student_Results>>(Responsed_Data.Content);
 
-                foreach (var item in data)
+                foreach (var q in quizzes.Values)
                 {
-                    F_Result_Template.Student_Results Temp_Holder = new F_Result_Template.Student_Results();
-                    Temp_Holder.Quiz_Name = item.Quiz_Name;
-                    Temp_Holder.Right_Answers = item.Right_Answers;
-                    Temp_Holder.Wrong_Answers= item.Wrong_Answers;
-                    Temp_Holder.Grade = item.Grade;
+                   F_Result_Template.Student_Results Temp_Holder = new F_Result_Template.Student_Results();
+                    Temp_Holder.Quiz_Name = q.Quiz_Name;
+                    Temp_Holder.Right_Answers = q.Right_Answers;
+                    Temp_Holder.Wrong_Answers = q.Wrong_Answers;
+                    Temp_Holder.Grade = q.Grade;
+                    Temp_Holder.Student_Name = q.Student_Name;
+
                     Student_Results.Add(Temp_Holder);
                 }
-
-               for(int i = 0;i< Student_Results.Count; i++)
+                for (int i = 0;i < Student_Results.Count; i++)
                 {
-                    MessageBox.Show(Student_Results[i].Quiz_Name + "\n" + Student_Results[i].Right_Answers + "\n" + Student_Results[i].Wrong_Answers + "\n" + Student_Results[i].Grade);
+                    MessageBox.Show("Quiz Name: " + Student_Results[i].Quiz_Name + "\nRight_Answers: " + Student_Results[i].Right_Answers + "\nWrong_Answers:" + Student_Results[i].Wrong_Answers + "\nGrade: " + Student_Results[i].Grade+ "\nStudent_Name: " + Student_Results[i].Student_Name);
                 }
             }
             else

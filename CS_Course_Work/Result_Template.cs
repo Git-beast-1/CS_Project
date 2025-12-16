@@ -17,17 +17,18 @@ namespace CS_Course_Work
     {
         public class Student_Results 
         {
-            public string Quiz_Name;
-            public string Right_Answers;
-            public string Wrong_Answers;
-            public string Grade;
+            public string Student_Name {  get; set; }
+            public string Quiz_Name { get; set; }
+            public string Right_Answers { get; set; }
+            public string Wrong_Answers { get; set; }   
+            public string Grade { get; set; }
         }
         public Student_Results Results = new Student_Results();
 
         public List<string> All_Chosen_Answers = new List<string>();
         public List<F_Student_Home_Page.Retrieved_Question_Set_UP> Compare_with_Questions = new List<F_Student_Home_Page.Retrieved_Question_Set_UP>();
         public float Number_of_Right_answers, Number_of_wrong_Answers;
-        public string Teacher_ID,Quiz_Name,Reference_Student_ID;
+        public string Teacher_ID,Quiz_Name,Reference_Student_ID,Student_Name;
         public List<string> right_answers, wrong_answers;
         public F_Result_Template()
         {
@@ -101,6 +102,7 @@ namespace CS_Course_Work
             Results.Wrong_Answers = T_Incorrect_Questions.Text;
             Results.Grade = T_Score_Percentage.Text;
             Results.Quiz_Name = Quiz_Name;
+            Results.Student_Name = Student_Name;
         }
     }
 }

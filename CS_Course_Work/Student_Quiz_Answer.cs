@@ -23,7 +23,7 @@ namespace CS_Course_Work
         public int Max_Index,Current_Index;
         public List<string> Student_Answers = new List<string>();
         public List<Button> Option_Buts;
-        public string Quiz_Name,Teacher_ID,Student_ID;
+        public string Quiz_Name,Teacher_ID,Student_ID,Student_Name;
         public class Additional_Quiz_Information_Record
         {
             public string All_Links {  get; set; }
@@ -150,6 +150,7 @@ namespace CS_Course_Work
             result_Template.Quiz_Name = Quiz_Name;
             result_Template.Teacher_ID = Teacher_ID;
             result_Template.Reference_Student_ID = Student_ID;
+            result_Template.Student_Name = Student_Name;
             result_Template.Show();
             this.Hide();
         }

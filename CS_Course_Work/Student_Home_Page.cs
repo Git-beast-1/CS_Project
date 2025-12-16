@@ -39,6 +39,7 @@ namespace CS_Course_Work
 
         private void F_Student_Home_Page_Load(object sender, EventArgs e)
         {
+            T_Student_Name.Text = Student_Name;
             List_All_Available_Quizzes();
         }
         private void But_Tester_Click(object sender, EventArgs e)
@@ -126,6 +127,7 @@ namespace CS_Course_Work
                 Student_Quiz_Form.Quiz_Name= Quiz_Name;
                 Student_Quiz_Form.Teacher_ID = Teacher_ID;
                 Student_Quiz_Form.Student_ID = Student_ID;
+                Student_Quiz_Form.Student_Name = Student_Name;
                 Student_Quiz_Form.Show();
                 this.Hide();
             }

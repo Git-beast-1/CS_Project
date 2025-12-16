@@ -31,8 +31,8 @@
             this.Combo_Quiz_Name = new System.Windows.Forms.ComboBox();
             this.d = new System.ComponentModel.BackgroundWorker();
             this.But_Tester = new System.Windows.Forms.Button();
-            this.T_Teacher_Account = new System.Windows.Forms.RichTextBox();
-            this.T_Teacher_Name = new System.Windows.Forms.RichTextBox();
+            this.T_Student_Account = new System.Windows.Forms.RichTextBox();
+            this.T_Student_Name = new System.Windows.Forms.RichTextBox();
             this.But_Submit_Quiz = new System.Windows.Forms.Button();
             this.But_Start_Quiz = new System.Windows.Forms.Button();
             this.But_List_Teachers = new System.Windows.Forms.Button();
@@ -60,21 +60,21 @@
             this.But_Tester.UseVisualStyleBackColor = true;
             this.But_Tester.Click += new System.EventHandler(this.But_Tester_Click);
             // 
-            // T_Teacher_Account
+            // T_Student_Account
             // 
-            this.T_Teacher_Account.Location = new System.Drawing.Point(9, 40);
-            this.T_Teacher_Account.Name = "T_Teacher_Account";
-            this.T_Teacher_Account.Size = new System.Drawing.Size(100, 24);
-            this.T_Teacher_Account.TabIndex = 20;
-            this.T_Teacher_Account.Text = "Account";
+            this.T_Student_Account.Location = new System.Drawing.Point(9, 40);
+            this.T_Student_Account.Name = "T_Student_Account";
+            this.T_Student_Account.Size = new System.Drawing.Size(100, 24);
+            this.T_Student_Account.TabIndex = 20;
+            this.T_Student_Account.Text = "Account";
             // 
-            // T_Teacher_Name
+            // T_Student_Name
             // 
-            this.T_Teacher_Name.Location = new System.Drawing.Point(9, 9);
-            this.T_Teacher_Name.Name = "T_Teacher_Name";
-            this.T_Teacher_Name.Size = new System.Drawing.Size(100, 24);
-            this.T_Teacher_Name.TabIndex = 19;
-            this.T_Teacher_Name.Text = "Name";
+            this.T_Student_Name.Location = new System.Drawing.Point(9, 9);
+            this.T_Student_Name.Name = "T_Student_Name";
+            this.T_Student_Name.Size = new System.Drawing.Size(100, 24);
+            this.T_Student_Name.TabIndex = 19;
+            this.T_Student_Name.Text = "Name";
             // 
             // But_Submit_Quiz
             // 
@@ -141,8 +141,8 @@
             this.Controls.Add(this.But_Quiz_Results);
             this.Controls.Add(this.But_Submit_Quiz);
             this.Controls.Add(this.But_Start_Quiz);
-            this.Controls.Add(this.T_Teacher_Account);
-            this.Controls.Add(this.T_Teacher_Name);
+            this.Controls.Add(this.T_Student_Account);
+            this.Controls.Add(this.T_Student_Name);
             this.Controls.Add(this.But_Tester);
             this.Controls.Add(this.Combo_Quiz_Name);
             this.Name = "F_Student_Home_Page";
@@ -157,8 +157,8 @@
         private System.Windows.Forms.ComboBox Combo_Quiz_Name;
         private System.ComponentModel.BackgroundWorker d;
         private System.Windows.Forms.Button But_Tester;
-        private System.Windows.Forms.RichTextBox T_Teacher_Account;
-        private System.Windows.Forms.RichTextBox T_Teacher_Name;
+        private System.Windows.Forms.RichTextBox T_Student_Account;
+        private System.Windows.Forms.RichTextBox T_Student_Name;
         private System.Windows.Forms.Button But_Submit_Quiz;
         private System.Windows.Forms.Button But_Start_Quiz;
         private System.Windows.Forms.Button But_List_Teachers;

@@ -81,17 +81,20 @@ namespace CS_Course_Work
                 {
                     F_Student_Home_Page New_Student = new F_Student_Home_Page();
                     New_Student.Student_ID = User_ID; 
+                    //New_Student.Name = Name;
+                    New_Student.Student_Name = name;
+                    
                     New_Student.Show();
-                    New_Student.Name = Name;  
                     this.Hide();
                 }
                 else if(type == "Teacher")
                 {
                     F_Teacher_Home_Page New_Teacher = new F_Teacher_Home_Page();
                  //   Student_ID_Access(); 
-                    New_Teacher.Show();
+
                     New_Teacher.Teacher_ID = User_ID;
-                    New_Teacher.Teacher_Name = name;    
+                    New_Teacher.Teacher_Name = name;     
+                    New_Teacher.Show(); 
                     this.Hide();
                 }
             }
