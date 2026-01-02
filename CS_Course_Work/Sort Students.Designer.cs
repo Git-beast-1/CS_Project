@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.But_Bubble_Sort = new System.Windows.Forms.Button();
+            this.But_Insertion_Sort = new System.Windows.Forms.Button();
+            this.But_Binary_Search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // But_Bubble_Sort
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Bubble Sort";
-            this.button1.UseVisualStyleBackColor = true;
+            this.But_Bubble_Sort.Location = new System.Drawing.Point(18, 18);
+            this.But_Bubble_Sort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Bubble_Sort.Name = "But_Bubble_Sort";
+            this.But_Bubble_Sort.Size = new System.Drawing.Size(194, 72);
+            this.But_Bubble_Sort.TabIndex = 0;
+            this.But_Bubble_Sort.Text = "Bubble Sort";
+            this.But_Bubble_Sort.UseVisualStyleBackColor = true;
+            this.But_Bubble_Sort.Click += new System.EventHandler(this.But_Bubble_Sort_Click);
             // 
-            // button2
+            // But_Insertion_Sort
             // 
-            this.button2.Location = new System.Drawing.Point(147, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Insertion Sort";
-            this.button2.UseVisualStyleBackColor = true;
+            this.But_Insertion_Sort.Location = new System.Drawing.Point(220, 18);
+            this.But_Insertion_Sort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Insertion_Sort.Name = "But_Insertion_Sort";
+            this.But_Insertion_Sort.Size = new System.Drawing.Size(202, 72);
+            this.But_Insertion_Sort.TabIndex = 1;
+            this.But_Insertion_Sort.Text = "Insertion Sort";
+            this.But_Insertion_Sort.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // But_Binary_Search
             // 
-            this.button3.Location = new System.Drawing.Point(83, 65);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 47);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "binary search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.But_Binary_Search.Location = new System.Drawing.Point(124, 100);
+            this.But_Binary_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.But_Binary_Search.Name = "But_Binary_Search";
+            this.But_Binary_Search.Size = new System.Drawing.Size(194, 72);
+            this.But_Binary_Search.TabIndex = 2;
+            this.But_Binary_Search.Text = "binary search";
+            this.But_Binary_Search.UseVisualStyleBackColor = true;
             // 
             // Sort_Students
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 136);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(441, 209);
+            this.Controls.Add(this.But_Binary_Search);
+            this.Controls.Add(this.But_Insertion_Sort);
+            this.Controls.Add(this.But_Bubble_Sort);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Sort_Students";
             this.Text = "Sort_Students";
             this.ResumeLayout(false);
@@ -76,8 +81,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button But_Bubble_Sort;
+        private System.Windows.Forms.Button But_Insertion_Sort;
+        private System.Windows.Forms.Button But_Binary_Search;
     }
 }

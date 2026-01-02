@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static CS_Course_Work.F_Student_Home_Page;
 
 namespace CS_Course_Work
@@ -19,12 +20,11 @@ namespace CS_Course_Work
         public string Teacher_ID,Teacher_Name;
         public List<string> quizString = new List<string>();
        public List<F_Result_Template.Student_Results> Student_Results = new List<F_Result_Template.Student_Results> ();
+
         public F_Teacher_Home_Page()
         {
             InitializeComponent();
         }
-
-
         private void But_Add_Quiz_Click(object sender, EventArgs e)
         {
             F_Question_Template Quiz_Interface = new F_Question_Template();
@@ -57,10 +57,12 @@ namespace CS_Course_Work
 
                     Student_Results.Add(Temp_Holder);
                 }
-                for (int i = 0;i < Student_Results.Count; i++)
-                {
-                    MessageBox.Show("Quiz Name: " + Student_Results[i].Quiz_Name + "\nRight_Answers: " + Student_Results[i].Right_Answers + "\nWrong_Answers:" + Student_Results[i].Wrong_Answers + "\nGrade: " + Student_Results[i].Grade+ "\nStudent_Name: " + Student_Results[i].Student_Name);
-                }
+                BindingList<F_Result_Template.Student_Results> bindingList =
+                new BindingList<F_Result_Template.Student_Results>(Student_Results);
+
+                Data_Grid_View.AutoGenerateColumns = true;
+                Data_Grid_View.DataSource = bindingList;
+
             }
             else
             {
@@ -77,5 +79,41 @@ namespace CS_Course_Work
         {
             T_Teacher_Name.Text = Teacher_Name;
         }
+
+        public void Bubble_Sort_By_Name(List<F_Result_Template.Student_Results> List)
+        {
+            int index_sort = List.Count;
+
+            for (int i = 0; i < index_sort - 1; i++)
+            {
+                for (int j = 0; j < index_sort - i - 1; j++)
+                {
+                    if (string.Compare(List[j].Student_Name, List[j + 1].Student_Name) > 0)
+                    {
+                        // Swap
+                        var Temp = List[j];
+                        List[j] = List[j + 1];
+                        List[j + 1] = Temp;
+                    }
+                }
+            }
+        }
+
+        private void But_Sort_Students_Click(object sender, EventArgs e)
+        {
+            Sort_And_Display();
+        }
+
+        public void Sort_And_Display()
+        {
+            Bubble_Sort_By_Name(Student_Results);
+
+            BindingList<F_Result_Template.Student_Results> bindingList =
+                new BindingList<F_Result_Template.Student_Results>(Student_Results);
+
+            Data_Grid_View.AutoGenerateColumns = true;
+            Data_Grid_View.DataSource = bindingList;
+        }
+
     }
 }
